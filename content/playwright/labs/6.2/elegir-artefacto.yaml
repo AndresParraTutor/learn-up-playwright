@@ -1,0 +1,25 @@
+objective: "6.2"
+title: Elegir evidencia para un fallo CI
+scenario: |
+  Un test falla solo en CI. Necesitás reconstruir acciones, DOM, red y consola, pero no querés
+  grabar todos los intentos exitosos de cada ejecución.
+setup_sql: |
+  use: {
+    trace: 'on-first-retry'
+  }
+task: |
+  Nombrá el artefacto principal, el comando para abrir un archivo descargado y una precaución de
+  privacidad antes de compartirlo.
+expected_result: |
+  Se usa una traza, se abre con `npx playwright show-trace trace.zip` y se revisa que no contenga
+  datos sensibles o sesiones antes de compartir.
+self_check:
+  - prompt: Artefacto principal
+    kind: contains
+    value: traza
+  - prompt: Comando de apertura
+    kind: exact
+    value: npx playwright show-trace trace.zip
+  - prompt: Riesgo que debe revisarse
+    kind: contains
+    value: sensibles

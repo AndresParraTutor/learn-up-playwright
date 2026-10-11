@@ -1,0 +1,65 @@
+objective: "6.3"
+questions:
+  - external_id: "6.3-001"
+    type: single
+    difficulty: 1
+    is_mock_eligible: true
+    stem: |
+      ¿Qué comando abre el último reporte HTML de Playwright?
+    explanation: |
+      `show-report` sirve el reporte generado para navegar resultados y attachments.
+    choices:
+      - text: "`npx playwright show-report`"
+        correct: true
+        explanation: Correct — abre la interfaz del reporte HTML.
+      - text: "`npx playwright open-report`"
+        correct: false
+        explanation: Ese comando no corresponde a la apertura del reporte.
+      - text: "`npm report`"
+        correct: false
+        explanation: No es el comando del reporter de Playwright.
+      - text: "`playwright.config.ts`"
+        correct: false
+        explanation: El archivo de configuración no se abre así como reporte.
+  - external_id: "6.3-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      Un test falla una vez y pasa en el primer retry sin cambios. ¿Cómo lo clasifica Playwright Test?
+    explanation: |
+      Un test que falla inicialmente y luego pasa en un reintento se clasifica como flaky.
+    choices:
+      - text: Passed estable desde el primer intento
+        correct: false
+        explanation: Hubo un fallo inicial y por eso no es estable.
+      - text: Skipped porque el runner omitió toda ejecución
+        correct: false
+        explanation: El test sí se ejecutó al menos dos veces.
+      - text: Flaky
+        correct: true
+        explanation: Correct — la variación entre intentos debe investigarse.
+      - text: Corregido automáticamente y libre de riesgos futuros
+        correct: false
+        explanation: Un retry no corrige la causa ni garantiza estabilidad.
+  - external_id: "6.3-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué información pertenece a un reporte de defecto reproducible? Seleccioná todas las correctas.
+    explanation: |
+      Entorno, pasos, expectativa, resultado y evidencia permiten reproducir y priorizar el defecto.
+    choices:
+      - text: Precondiciones y pasos mínimos
+        correct: true
+        explanation: Correct — otra persona necesita reconstruir el estado y la secuencia.
+      - text: Resultado esperado y resultado real
+        correct: true
+        explanation: Correct — la diferencia define el comportamiento incorrecto observado.
+      - text: Solo la frase “no funciona” sin versión ni evidencia
+        correct: false
+        explanation: No permite reproducir, estimar impacto ni distinguir el entorno.
+      - text: Credenciales reales copiadas en texto para facilitar el acceso
+        correct: false
+        explanation: Los secretos no deben formar parte de un reporte; usá datos y accesos de prueba seguros.

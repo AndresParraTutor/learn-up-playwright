@@ -1,0 +1,23 @@
+objective: "2.2"
+title: Preparar un proyecto TypeScript reproducible
+scenario: |
+  Vas a crear una suite desde cero y querés que otra persona pueda instalarla con el mismo grafo
+  de dependencias y los navegadores compatibles.
+setup_sql: |
+  node --version
+  npm --version
+task: |
+  Escribí el comando de inicialización, elegí TypeScript y nombrá el archivo que debe versionarse
+  para que `npm ci` reproduzca las dependencias.
+expected_result: |
+  Se usa `npm init playwright@latest`, se elige TypeScript y se conserva `package-lock.json`.
+self_check:
+  - prompt: Comando de inicialización
+    kind: exact
+    value: npm init playwright@latest
+  - prompt: Lenguaje elegido
+    kind: exact
+    value: TypeScript
+  - prompt: Lockfile que debe versionarse
+    kind: exact
+    value: package-lock.json

@@ -1,0 +1,24 @@
+objective: "1.5"
+title: Diseñar casos con límites y reglas
+scenario: |
+  Un formulario acepta una edad entre 18 y 120 inclusive y exige consentimiento cuando la
+  persona es menor de 21. Debés seleccionar datos útiles antes de automatizar.
+setup_sql: |
+  Regla 1: edad válida entre 18 y 120 inclusive.
+  Regla 2: si edad < 21, consentimiento = sí.
+task: |
+  Proponé valores para ambos límites y nombrá la técnica adecuada para representar la combinación
+  entre edad menor de 21 y consentimiento.
+expected_result: |
+  Los límites incluyen 17, 18, 19, 119, 120 y 121. Una tabla de decisión representa la regla de
+  consentimiento. Los casos se priorizan por impacto y probabilidad, no por cantidad.
+self_check:
+  - prompt: Valor inmediatamente inferior al mínimo válido
+    kind: exact
+    value: "17"
+  - prompt: Valor inmediatamente superior al máximo válido
+    kind: exact
+    value: "121"
+  - prompt: Técnica para combinar edad y consentimiento
+    kind: contains
+    value: tabla de decisión

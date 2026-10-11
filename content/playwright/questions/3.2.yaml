@@ -1,0 +1,65 @@
+objective: "3.2"
+questions:
+  - external_id: "3.2-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      El checkbox puede estar marcado por datos previos. ¿Qué acción expresa que debe terminar marcado?
+    explanation: |
+      `check()` busca el estado marcado y evita invertirlo accidentalmente si ya estaba activo.
+    choices:
+      - text: "`await checkbox.dblclick()`"
+        correct: false
+        explanation: Dos clicks no expresan el estado final y pueden producir comportamientos distintos.
+      - text: "`await checkbox.check()`"
+        correct: true
+        explanation: Correct — la acción semántica garantiza el estado seleccionado esperado.
+      - text: "`await page.keyboard.press('Escape')`"
+        correct: false
+        explanation: Escape no modela la selección del checkbox.
+      - text: "`await checkbox.evaluate(element => element.click())`"
+        correct: false
+        explanation: Manipular el DOM evita el comportamiento real del control y alterna su estado.
+  - external_id: "3.2-002"
+    type: multi
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué acciones son apropiadas para controles de formulario? Seleccioná todas las correctas.
+    explanation: |
+      Las APIs específicas expresan la intención y disparan interacciones coherentes con el control.
+    choices:
+      - text: "`await nombre.fill('Ana')`"
+        correct: true
+        explanation: Correct — establece el valor y dispara el evento de entrada correspondiente.
+      - text: "`await pais.selectOption('AR')`"
+        correct: true
+        explanation: Correct — elige opciones por valor, label o índice.
+      - text: Cambiar directamente cualquier variable interna de la aplicación para simular un click
+        correct: false
+        explanation: Evita la interfaz y puede omitir el comportamiento que se quiere probar.
+      - text: Usar coordenadas absolutas para todos los controles aunque tengan labels estables
+        correct: false
+        explanation: Las coordenadas se acoplan al layout y pierden la intención semántica.
+  - external_id: "3.2-003"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Después de hacer click en “Guardar”, ¿qué demuestra por sí sola la ausencia de error en `click()`?
+    explanation: |
+      La acción exitosa indica accionabilidad y ejecución, pero la consecuencia de negocio requiere una assertion.
+    choices:
+      - text: Que el guardado persistió correctamente en todas las capas del sistema
+        correct: false
+        explanation: La acción no valida por sí sola persistencia ni respuesta del backend.
+      - text: Que no hace falta verificar mensajes, URL ni estado posterior
+        correct: false
+        explanation: Sin una expectativa, el caso no decide si ocurrió el resultado correcto.
+      - text: Que el control pudo recibir la acción solicitada
+        correct: true
+        explanation: Correct — confirma la acción, no toda la consecuencia funcional.
+      - text: Que cualquier error futuro será automáticamente corregido por Playwright
+        correct: false
+        explanation: Playwright informa condiciones; no corrige defectos del producto.

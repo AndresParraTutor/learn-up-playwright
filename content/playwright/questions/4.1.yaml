@@ -1,0 +1,65 @@
+objective: "4.1"
+questions:
+  - external_id: "4.1-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué diferencia principal tiene `await expect(locator).toHaveText('Listo')` frente a leer `textContent()` una vez?
+    explanation: |
+      La assertion web-first vuelve a resolver el localizador y reintenta hasta observar el estado esperado.
+    choices:
+      - text: Convierte el texto en una imagen antes de compararlo
+        correct: false
+        explanation: La assertion compara contenido del elemento, no crea una imagen.
+      - text: Reintenta sobre el estado observable
+        correct: true
+        explanation: Correct — espera la condición concreta dentro del timeout de expect.
+      - text: Desactiva automáticamente cualquier timeout configurado en el proyecto
+        correct: false
+        explanation: La assertion sigue limitada por un timeout configurable.
+      - text: Hace que el test pase aunque el texto nunca llegue a coincidir
+        correct: false
+        explanation: Si la condición no se cumple, la assertion falla con evidencia.
+  - external_id: "4.1-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué problema puede causar omitir `await` en una assertion web-first?
+    explanation: |
+      El test puede continuar o finalizar sin esperar que la Promise evalúe la expectativa.
+    choices:
+      - text: El navegador cambia obligatoriamente de Chromium a WebKit
+        correct: false
+        explanation: La selección de navegador depende de proyectos, no del uso de await.
+      - text: La assertion se transforma en una validación visual de screenshots
+        correct: false
+        explanation: El matcher no cambia de tipo por omitir await.
+      - text: El test puede no esperar la evaluación
+        correct: true
+        explanation: Correct — queda una operación asíncrona pendiente y la señal puede perderse.
+      - text: TypeScript borra todos los localizadores definidos en el archivo
+        correct: false
+        explanation: No ocurre una eliminación de localizadores; el problema es el flujo asíncrono.
+  - external_id: "4.1-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Cuáles son assertions web-first? Seleccioná todas las correctas.
+    explanation: |
+      Los matchers sobre Page o Locator reconsultan el estado; los genéricos trabajan con valores ya obtenidos.
+    choices:
+      - text: "`await expect(page).toHaveURL(/panel/)`"
+        correct: true
+        explanation: Correct — vuelve a comprobar la URL de la Page hasta que coincide.
+      - text: "`await expect(boton).toBeEnabled()`"
+        correct: true
+        explanation: Correct — espera el estado habilitado del Locator.
+      - text: "`expect(calculo).toBe(42)`"
+        correct: false
+        explanation: Es una assertion genérica inmediata sobre un valor calculado.
+      - text: "`expect(await boton.isVisible()).toBe(true)`"
+        correct: false
+        explanation: Evalúa un booleano ya calculado y no vuelve a consultar la interfaz.

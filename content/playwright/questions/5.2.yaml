@@ -1,0 +1,65 @@
+objective: "5.2"
+questions:
+  - external_id: "5.2-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Cuál es el propósito principal de Page Object Model?
+    explanation: |
+      POM encapsula detalles de interacción detrás de una API de dominio para facilitar autoría y mantenimiento.
+    choices:
+      - text: Convertir todos los tests independientes en una única secuencia obligatoria
+        correct: false
+        explanation: POM no requiere dependencia de orden entre casos.
+      - text: Encapsular localizadores y operaciones de una vista
+        correct: true
+        explanation: Correct — concentra conocimiento de la interfaz con nombres significativos.
+      - text: Reemplazar todas las assertions por retornos booleanos que nunca fallan
+        correct: false
+        explanation: El modelo no debe eliminar las expectativas ni su señal.
+      - text: Compartir credenciales y estado de sesión mediante propiedades estáticas
+        correct: false
+        explanation: Secretos y estado global contradicen aislamiento y seguridad.
+  - external_id: "5.2-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué nombre de método representa mejor una API de dominio en un page object de checkout?
+    explanation: |
+      Un método de dominio describe el objetivo; uno basado en coordenadas o detalles internos expone implementación.
+    choices:
+      - text: "`clickThirdOrangeButton()`"
+        correct: false
+        explanation: El nombre acopla el test a posición y estilo sin expresar intención.
+      - text: "`doAction(value: any)`"
+        correct: false
+        explanation: La operación genérica oculta tipos y significado del flujo.
+      - text: "`completeCheckout()`"
+        correct: true
+        explanation: Correct — comunica la operación que el escenario necesita realizar.
+      - text: "`setSharedPage(page)`"
+        correct: false
+        explanation: Compartir estado global introduce carreras y no describe una acción del dominio.
+  - external_id: "5.2-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué señales indican un POM problemático? Seleccioná todas las correctas.
+    explanation: |
+      Un modelo gigantesco, genérico o con estado compartido aumenta acoplamiento y oculta intención.
+    choices:
+      - text: Una clase representa toda la aplicación con cientos de métodos no relacionados
+        correct: true
+        explanation: Correct — la responsabilidad excesiva vuelve riesgoso cualquier cambio.
+      - text: Las instancias comparten una Page global mutable entre workers
+        correct: true
+        explanation: Correct — esa decisión rompe aislamiento y provoca interferencia.
+      - text: El modelo encapsula localizadores estables de una vista reutilizada
+        correct: false
+        explanation: Esa es una responsabilidad apropiada para POM.
+      - text: Los tests conservan assertions visibles sobre sus resultados
+        correct: false
+        explanation: Mantener expectativas claras mejora el diagnóstico del escenario.

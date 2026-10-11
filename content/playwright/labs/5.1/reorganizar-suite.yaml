@@ -1,0 +1,25 @@
+objective: "5.1"
+title: Reorganizar una suite pequeña
+scenario: |
+  Diez archivos repiten navegación a login, creación de proyectos y datos de usuarios. Algunos
+  helpers reciben parámetros genéricos que no expresan el dominio.
+setup_sql: |
+  tests/auth/login.spec.ts
+  tests/projects/create.spec.ts
+  tests/projects/delete.spec.ts
+task: |
+  Proponé una ubicación para los specs, una abstracción con nombre de dominio para crear proyectos
+  y el archivo donde debería vivir la baseURL.
+expected_result: |
+  Los specs se agrupan por comportamiento, la operación se llama por ejemplo `crearProyecto` y
+  `baseURL` se configura en `playwright.config.ts`.
+self_check:
+  - prompt: Nombre de la operación reutilizable
+    kind: contains
+    value: crearProyecto
+  - prompt: Archivo de configuración transversal
+    kind: exact
+    value: playwright.config.ts
+  - prompt: Carpeta de los tests de autenticación
+    kind: contains
+    value: auth

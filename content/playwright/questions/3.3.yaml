@@ -1,0 +1,65 @@
+objective: "3.3"
+questions:
+  - external_id: "3.3-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué método carga un archivo en un `input[type=file]`?
+    explanation: |
+      `setInputFiles()` modela la selección de archivos y acepta rutas o buffers en memoria.
+    choices:
+      - text: "`await input.setInputFiles('archivo.pdf')`"
+        correct: true
+        explanation: Correct — es la API específica para establecer archivos seleccionados.
+      - text: "`await input.selectOption('archivo.pdf')`"
+        correct: false
+        explanation: Esa acción elige opciones de un elemento select, no archivos.
+      - text: "`await input.fill('archivo.pdf')`"
+        correct: false
+        explanation: "`fill()` escribe texto en controles editables; no establece archivos en un input file."
+      - text: "`await expect(page).toHaveURL(/archivo/)`"
+        correct: false
+        explanation: Es una assertion de URL y no realiza una carga.
+  - external_id: "3.3-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      Veinte tests necesitan una sesión válida, pero solo dos evalúan el login. ¿Cuál es el diseño más razonable?
+    explanation: |
+      Conviene probar el login por UI en sus propios casos y preparar de forma controlada el estado autenticado para los demás.
+    choices:
+      - text: Repetir el login completo en cada test para crear dependencia de la misma cuenta
+        correct: false
+        explanation: Aumenta tiempo, puntos de fallo y riesgo de estado compartido.
+      - text: Eliminar todos los casos de login porque la autenticación es solo una precondición
+        correct: false
+        explanation: El comportamiento de login todavía necesita cobertura específica.
+      - text: Probar login aparte y reutilizar un estado autenticado controlado
+        correct: true
+        explanation: Correct — separa el comportamiento bajo prueba de una preparación repetitiva.
+      - text: Guardar credenciales reales dentro de cada archivo para evitar configuración
+        correct: false
+        explanation: Exponer secretos es inseguro y dificulta el control del entorno.
+  - external_id: "3.3-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué propiedades deberían tener los datos de una suite paralela? Seleccioná todas las correctas.
+    explanation: |
+      Datos únicos, repetibles y descartables reducen colisiones y dependencia del orden.
+    choices:
+      - text: Ser únicos cuando varias ejecuciones podrían colisionar
+        correct: true
+        explanation: Correct — la unicidad evita que workers modifiquen la misma entidad.
+      - text: Poder recrearse de manera controlada en un retry
+        correct: true
+        explanation: Correct — la repetibilidad mantiene válida una nueva ejecución.
+      - text: Depender del test anterior para quedar en el estado correcto
+        correct: false
+        explanation: La dependencia de orden rompe aislamiento y dificulta ejecución selectiva.
+      - text: Contener información personal real para representar mejor producción
+        correct: false
+        explanation: Los datos sensibles no son necesarios y agregan riesgos de privacidad.

@@ -1,0 +1,65 @@
+objective: "5.3"
+questions:
+  - external_id: "5.3-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Por qué cada fila de un test parametrizado debería producir un título único?
+    explanation: |
+      El título identifica la regla y el dato en consola, filtros y reportes.
+    choices:
+      - text: Para que el navegador use una resolución distinta en cada ejecución
+        correct: false
+        explanation: El título no modifica emulación ni viewport.
+      - text: Para diagnosticar qué dato o regla falló
+        correct: true
+        explanation: Correct — la identidad explícita hace accionable el resultado de cada caso.
+      - text: Para almacenar secretos dentro del nombre y evitar variables de entorno
+        correct: false
+        explanation: Los títulos aparecen en reportes y nunca deben contener credenciales.
+      - text: Para obligar a todos los casos a ejecutarse dentro de un único test largo
+        correct: false
+        explanation: Conviene registrar casos independientes para conservar resultados separados.
+  - external_id: "5.3-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      En una fixture, ¿qué separa normalmente la preparación del teardown?
+    explanation: |
+      El código anterior a `use()` prepara el recurso; el posterior se ejecuta para limpiarlo.
+    choices:
+      - text: La llamada `use(valor)`
+        correct: true
+        explanation: Correct — entrega la fixture al test y luego continúa con la limpieza.
+      - text: Una espera fija de sesenta segundos sin observar el estado
+        correct: false
+        explanation: El tiempo no delimita el ciclo de vida de una fixture.
+      - text: La primera assertion del archivo aunque el test no use la fixture
+        correct: false
+        explanation: El runner prepara fixtures según dependencias declaradas, no por una assertion arbitraria.
+      - text: El nombre de la carpeta donde está almacenado el page object
+        correct: false
+        explanation: La ubicación del archivo no controla setup y teardown.
+  - external_id: "5.3-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué características son deseables en el teardown? Seleccioná todas las correctas.
+    explanation: |
+      La limpieza debe tolerar preparación parcial y dejar visible un fallo que comprometa el entorno.
+    choices:
+      - text: Ser idempotente cuando sea posible
+        correct: true
+        explanation: Correct — repetir la limpieza no debería dañar el estado ni fallar innecesariamente.
+      - text: Manejar recursos que quizá no llegaron a crearse
+        correct: true
+        explanation: Correct — el test puede fallar antes de completar toda la preparación.
+      - text: Ocultar cualquier error de limpieza aunque contamine la suite
+        correct: false
+        explanation: Un entorno contaminado debe reportarse para proteger casos posteriores.
+      - text: Depender de una credencial real escrita en el repositorio
+        correct: false
+        explanation: Los secretos deben gestionarse fuera del código y nunca registrarse.

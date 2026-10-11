@@ -1,0 +1,65 @@
+objective: "2.3"
+questions:
+  - external_id: "2.3-001"
+    type: single
+    difficulty: 1
+    is_mock_eligible: true
+    stem: |
+      ¿Qué comando ejecuta todos los tests descubiertos por Playwright Test?
+    explanation: |
+      La CLI del runner descubre los archivos según la configuración y coordina su ejecución.
+    choices:
+      - text: "`npx playwright show-report`"
+        correct: false
+        explanation: Ese comando abre un reporte ya generado; no ejecuta la suite.
+      - text: "`npx playwright test`"
+        correct: true
+        explanation: Correct — es el comando principal de ejecución de Playwright Test.
+      - text: "`npm playwright run`"
+        correct: false
+        explanation: No es un comando válido del ecosistema Playwright.
+      - text: "`package-lock.json`"
+        correct: false
+        explanation: El lockfile no es un programa ejecutable ni un runner.
+  - external_id: "2.3-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Por qué se usa `await` delante de `page.goto()` y de acciones sobre localizadores?
+    explanation: |
+      Las operaciones son asíncronas y el test debe esperar su finalización antes de depender del resultado.
+    choices:
+      - text: Para convertir automáticamente TypeScript en una prueba manual
+        correct: false
+        explanation: Esperar una Promise no convierte la prueba ni cambia su forma de ejecución.
+      - text: Para desactivar el aislamiento del BrowserContext durante una sola línea
+        correct: false
+        explanation: El aislamiento no depende de `await`.
+      - text: Para esperar la Promise antes de continuar
+        correct: true
+        explanation: Correct — evita que el flujo avance mientras la operación sigue pendiente.
+      - text: Para hacer que cualquier assertion pase aunque el resultado real sea distinto
+        correct: false
+        explanation: Esperar una operación no altera la condición que evalúa `expect`.
+  - external_id: "2.3-003"
+    type: multi
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué información conviene revisar primero ante un test fallido? Seleccioná todas las correctas.
+    explanation: |
+      La salida del runner ubica el fallo y muestra la comparación o error antes de requerir cambios.
+    choices:
+      - text: Mensaje de la assertion y valores esperado/observado
+        correct: true
+        explanation: Correct — esa comparación aclara qué expectativa no se cumplió.
+      - text: Ubicación y call log asociado al fallo
+        correct: true
+        explanation: Correct — la secuencia ayuda a identificar la operación que no pudo completarse.
+      - text: Suposición de que todo fallo es ruido y debe ocultarse con retries
+        correct: false
+        explanation: Reintentar sin investigar puede encubrir un defecto o test inestable.
+      - text: Cantidad de caracteres del nombre del archivo sin leer ningún resultado
+        correct: false
+        explanation: Ese dato no explica el comportamiento ni la causa del fallo.

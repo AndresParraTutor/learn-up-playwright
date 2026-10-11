@@ -1,0 +1,23 @@
+objective: "5.3"
+title: Parametrizar límites con títulos únicos
+scenario: |
+  Debés convertir los valores 17, 18, 120 y 121 en casos independientes para una regla de edad
+  válida entre 18 y 120 inclusive.
+setup_sql: |
+  const casos = [17, 18, 120, 121];
+task: |
+  Indicá cuántos tests registrará el loop correcto, qué dato identifica el mínimo válido y qué
+  propiedad debe tener cada título para facilitar el reporte.
+expected_result: |
+  Se registran cuatro tests; 18 es el mínimo válido; cada título es único e incluye el valor o la
+  regla ejercitada.
+self_check:
+  - prompt: Cantidad de tests independientes
+    kind: exact
+    value: "4"
+  - prompt: Mínimo válido
+    kind: exact
+    value: "18"
+  - prompt: Propiedad requerida de los títulos
+    kind: contains
+    value: único

@@ -1,0 +1,24 @@
+objective: "7.3"
+title: Alinear Playwright y la imagen de GitLab CI
+scenario: |
+  `package-lock.json` fija Playwright 1.62.1, pero el pipeline usa una imagen 1.61.0. En CI aparece
+  un error al iniciar el navegador que no se reproduce localmente.
+setup_sql: |
+  paquete: @playwright/test@1.62.1
+  imagen actual: mcr.microsoft.com/playwright:v1.61.0-noble
+task: |
+  Proponé el tag compatible, el comando que todavía debe instalar los paquetes del proyecto y la
+  política de artifacts necesaria para conservar el reporte ante fallos.
+expected_result: |
+  La imagen cambia a `mcr.microsoft.com/playwright:v1.62.1-noble`; el job mantiene `npm ci` y usa
+  `artifacts: when: always` para el reporte.
+self_check:
+  - prompt: Imagen compatible
+    kind: exact
+    value: mcr.microsoft.com/playwright:v1.62.1-noble
+  - prompt: Instalación de paquetes del proyecto
+    kind: exact
+    value: npm ci
+  - prompt: Política de publicación ante fallos
+    kind: contains
+    value: always

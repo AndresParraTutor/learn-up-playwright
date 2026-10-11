@@ -1,0 +1,65 @@
+objective: "7.1"
+questions:
+  - external_id: "7.1-001"
+    type: single
+    difficulty: 1
+    is_mock_eligible: true
+    stem: |
+      ¿Cuál es el propósito principal de ejecutar Playwright dentro de integración continua?
+    explanation: |
+      La CI aplica una secuencia repetible de verificaciones a los cambios del equipo.
+    choices:
+      - text: Verificar automáticamente los cambios y entregar feedback reproducible
+        correct: true
+        explanation: Correct — el pipeline transforma la suite en una señal compartida ante cada cambio relevante.
+      - text: Reemplazar todas las revisiones de código por capturas de pantalla
+        correct: false
+        explanation: Las pruebas E2E complementan otras revisiones y controles; no los sustituyen.
+      - text: Evitar que los tests vuelvan a ejecutarse fuera de la computadora del autor
+        correct: false
+        explanation: La CI busca precisamente repetir la ejecución en un entorno controlado.
+      - text: Garantizar que cualquier resultado verde demuestre ausencia total de defectos
+        correct: false
+        explanation: Una suite solo informa sobre los riesgos y comportamientos que efectivamente cubre.
+  - external_id: "7.1-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      Un smoke test crítico es flaky y bloquea aproximadamente uno de cada cinco pull requests correctos. ¿Qué acción protege mejor el quality gate?
+    explanation: |
+      Un gate útil necesita una señal confiable y una respuesta explícita frente a la inestabilidad.
+    choices:
+      - text: Aumentar todos los timeouts hasta que el problema deje de ser visible
+        correct: false
+        explanation: Ocultar el síntoma no elimina la causa y puede demorar el feedback.
+      - text: Investigar la causa, estabilizar el caso y gestionar temporalmente su impacto
+        correct: true
+        explanation: Correct — la protección requiere recuperar una señal confiable sin normalizar falsos fallos.
+      - text: Ignorar siempre el estado rojo porque los retries pueden aprobar después
+        correct: false
+        explanation: Los retries aportan evidencia, pero no convierten una prueba inestable en una señal segura.
+      - text: Eliminar definitivamente todos los tests E2E del pipeline
+        correct: false
+        explanation: La decisión descartaría cobertura valiosa sin resolver el problema concreto.
+  - external_id: "7.1-003"
+    type: multi
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué decisiones corresponden a una estrategia de testing ágil en CI? Seleccioná todas las correctas.
+    explanation: |
+      La estrategia adapta profundidad y frecuencia al riesgo, al costo y a la velocidad de feedback.
+    choices:
+      - text: Ejecutar comprobaciones rápidas y valiosas ante cambios frecuentes
+        correct: true
+        explanation: Correct — el feedback temprano reduce el costo de detectar una regresión.
+      - text: Reservar suites amplias o navegadores adicionales para etapas apropiadas
+        correct: true
+        explanation: Correct — no todas las señales necesitan ejecutarse en el primer gate.
+      - text: Definir criterios de aceptación recién después de cerrar la iteración
+        correct: false
+        explanation: Discutirlos temprano ayuda a compartir expectativas y diseñar pruebas útiles.
+      - text: Mantener los flaky tests fuera del trabajo visible del equipo
+        correct: false
+        explanation: La inestabilidad degrada la señal y debe gestionarse explícitamente.

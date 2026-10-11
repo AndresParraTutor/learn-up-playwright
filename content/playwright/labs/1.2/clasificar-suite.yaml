@@ -1,0 +1,26 @@
+objective: "1.2"
+title: Clasificar una suite por varias dimensiones
+scenario: |
+  Una prueba recorre login, selección de producto, pago de prueba y confirmación mediante la
+  interfaz. Se ejecuta automáticamente en cada liberación y forma parte de un conjunto breve
+  de rutas críticas.
+setup_sql: |
+  Flujo: login -> catálogo -> checkout -> confirmación
+  Ejecución: automática, antes de liberar
+  Alcance: aplicación integrada
+task: |
+  Clasificá el caso por nivel, tipo funcional/no funcional, alcance E2E y propósito dentro de
+  la ejecución previa a una liberación. Explicá por qué las etiquetas no se excluyen.
+expected_result: |
+  Es una prueba funcional de sistema, E2E y automatizada que puede formar parte del smoke.
+  Las etiquetas describen dimensiones diferentes.
+self_check:
+  - prompt: Nivel principal de la prueba
+    kind: contains
+    value: sistema
+  - prompt: Alcance del flujo
+    kind: contains
+    value: E2E
+  - prompt: Propósito del conjunto breve previo a liberar
+    kind: contains
+    value: smoke

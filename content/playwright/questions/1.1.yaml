@@ -1,0 +1,65 @@
+objective: "1.1"
+questions:
+  - external_id: "1.1-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Un test de login falla porque la aplicación acepta una contraseña inválida. ¿Qué actividad corresponde al testing y no todavía al debugging?
+    explanation: |
+      El testing obtiene evidencia del comportamiento y revela el fallo; el debugging localiza y elimina el defecto que lo causa.
+    choices:
+      - text: Cambiar el test hasta que deje de mostrar el fallo observado
+        correct: false
+        explanation: Modificar el test para ocultar la señal no investiga ni corrige la causa.
+      - text: Registrar el resultado real frente al esperado
+        correct: true
+        explanation: Correct — comparar y registrar el comportamiento observado es parte del testing.
+      - text: Identificar la condición exacta del código que acepta la clave inválida
+        correct: false
+        explanation: Localizar el defecto interno pertenece al debugging posterior.
+      - text: Implementar una corrección y desplegarla sin volver a ejecutar el escenario
+        correct: false
+        explanation: Corregir sin una nueva comprobación omite la confirmación del resultado.
+  - external_id: "1.1-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Una regla ambigua lleva a implementar `edad > 18`; luego una persona de 18 años no puede registrarse. ¿Cuál es el fallo?
+    explanation: |
+      El fallo es la manifestación observable del defecto cuando se ejecuta bajo una condición concreta.
+    choices:
+      - text: La ambigüedad original de la regla de negocio
+        correct: false
+        explanation: La ambigüedad puede ser una causa raíz o un defecto en la base de prueba.
+      - text: La condición `edad > 18` almacenada en el código
+        correct: false
+        explanation: Esa condición es el defecto implementado.
+      - text: El rechazo observable de la persona de 18 años
+        correct: true
+        explanation: Correct — el rechazo durante la ejecución es el fallo visible.
+      - text: El caso automatizado que introduce el valor límite para comprobar la regla
+        correct: false
+        explanation: El test revela el fallo, pero no es el fallo del producto.
+  - external_id: "1.1-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué afirmaciones describen correctamente la relación entre testing y QA? Seleccioná todas las correctas.
+    explanation: |
+      Testing y QA se complementan: el primero evalúa productos y comportamientos; QA también mejora procesos para prevenir problemas.
+    choices:
+      - text: Testing aporta evidencia sobre comportamientos y riesgos del producto
+        correct: true
+        explanation: Correct — ejecutar y evaluar pruebas produce información para decisiones de calidad.
+      - text: QA se limita exclusivamente a ejecutar scripts automáticos en cada commit
+        correct: false
+        explanation: QA incluye prácticas preventivas y mejora de procesos, no solo ejecución automática.
+      - text: QA puede mejorar criterios, revisiones y procesos que previenen defectos
+        correct: true
+        explanation: Correct — el aseguramiento de calidad actúa también sobre la forma de construir el producto.
+      - text: Un resultado verde demuestra que ya no existen defectos fuera de los casos ejecutados
+        correct: false
+        explanation: Los resultados solo aportan evidencia sobre el alcance efectivamente ejercitado.

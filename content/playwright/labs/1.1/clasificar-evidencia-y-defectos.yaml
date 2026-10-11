@@ -1,0 +1,26 @@
+objective: "1.1"
+title: Clasificar evidencia, defectos y actividades
+scenario: |
+  Un formulario exige una edad mínima de 18 años. El criterio se redactó de forma ambigua,
+  el código usa `edad > 18` y una persona de 18 años observa un rechazo. El equipo primero
+  reproduce el comportamiento y luego inspecciona la condición implementada.
+setup_sql: |
+  Base acordada: "Las personas de 18 años o más pueden registrarse".
+  Resultado real para 18: "Registro rechazado".
+task: |
+  Clasificá el resultado observable, la condición incorrecta y la actividad de localizar la
+  condición en el código. Después indicá si mejorar el criterio de aceptación pertenece a
+  testing, debugging o QA.
+expected_result: |
+  El rechazo observable es un fallo; `edad > 18` es un defecto; localizarlo en el código es
+  debugging; mejorar el proceso de criterios es una acción de QA.
+self_check:
+  - prompt: ¿Cómo se clasifica el rechazo observable?
+    kind: contains
+    value: fallo
+  - prompt: ¿Cómo se clasifica la condición incorrecta del código?
+    kind: contains
+    value: defecto
+  - prompt: ¿Qué disciplina mejora preventivamente el criterio de aceptación?
+    kind: contains
+    value: QA

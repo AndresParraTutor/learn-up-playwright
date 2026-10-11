@@ -1,0 +1,25 @@
+objective: "5.2"
+title: Diseñar un page object de login
+scenario: |
+  Tres tests usan los campos Correo y Contraseña y el botón Ingresar. El DOM puede cambiar, pero
+  los nombres accesibles y la operación de iniciar sesión forman un contrato estable.
+setup_sql: |
+  class LoginPage {
+    constructor(private readonly page: Page) {}
+  }
+task: |
+  Definí conceptualmente el nombre del método de dominio, el tipo del objeto que representa cada
+  control y dónde dejarías la assertion de “Credenciales inválidas”.
+expected_result: |
+  El método puede llamarse `iniciarSesion`, los controles son Locator y la assertion permanece
+  visible en el test o se expone mediante un locator del modelo.
+self_check:
+  - prompt: Método de dominio
+    kind: contains
+    value: iniciarSesion
+  - prompt: Tipo de los controles
+    kind: exact
+    value: Locator
+  - prompt: Lugar recomendado para la assertion del escenario
+    kind: contains
+    value: test

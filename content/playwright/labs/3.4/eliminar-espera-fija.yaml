@@ -1,0 +1,24 @@
+objective: "3.4"
+title: Reemplazar una espera fija por una señal
+scenario: |
+  Un test hace click en Guardar, duerme cinco segundos y luego lee un mensaje que aparece cuando
+  termina una petición de duración variable.
+setup_sql: |
+  await page.getByRole('button', { name: 'Guardar' }).click();
+  await page.waitForTimeout(5000);
+task: |
+  Reemplazá conceptualmente la pausa por una assertion web-first sobre el estado “Guardado”.
+  Explicá por qué la nueva forma es más rápida y confiable.
+expected_result: |
+  Se usa `await expect(page.getByRole('status')).toHaveText('Guardado')`; termina apenas aparece
+  el estado y falla con una condición explícita si no aparece.
+self_check:
+  - prompt: Assertion de texto que reintenta
+    kind: contains
+    value: toHaveText
+  - prompt: Texto esperado
+    kind: exact
+    value: Guardado
+  - prompt: API que debe eliminarse
+    kind: contains
+    value: waitForTimeout

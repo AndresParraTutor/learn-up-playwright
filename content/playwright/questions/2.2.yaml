@@ -1,0 +1,65 @@
+objective: "2.2"
+questions:
+  - external_id: "2.2-001"
+    type: single
+    difficulty: 1
+    is_mock_eligible: true
+    stem: |
+      ¿Qué comando inicializa interactivamente un proyecto de Playwright con npm?
+    explanation: |
+      El inicializador oficial crea o integra la estructura y permite seleccionar TypeScript, tests y navegadores.
+    choices:
+      - text: "`npm init playwright@latest`"
+        correct: true
+        explanation: Correct — este comando ejecuta el asistente oficial de inicialización.
+      - text: "`npm uninstall -g playwright`"
+        correct: false
+        explanation: Ese comando intentaría quitar un paquete global y no crea un proyecto.
+      - text: "`playwright.config.ts`"
+        correct: false
+        explanation: El archivo de configuración no funciona como inicializador ejecutable.
+      - text: "`git init`"
+        correct: false
+        explanation: Git inicializa un repositorio, no instala ni configura Playwright.
+  - external_id: "2.2-002"
+    type: multi
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué elementos forman parte de un entorno Playwright reproducible? Seleccioná todas las correctas.
+    explanation: |
+      La reproducibilidad depende de versiones, lockfile, binarios compatibles y configuración compartida.
+    choices:
+      - text: "Un `package-lock.json` versionado"
+        correct: true
+        explanation: Correct — el lockfile fija el grafo exacto de dependencias para `npm ci`.
+      - text: Binarios de navegador compatibles con el paquete instalado
+        correct: true
+        explanation: Correct — cada versión espera revisiones específicas de navegador.
+      - text: Dependencias instaladas manualmente sin registrar su versión ni comando
+        correct: false
+        explanation: Los pasos implícitos hacen que otra máquina no pueda reproducir el entorno.
+      - text: Configuración diferente y no documentada en cada equipo del proyecto
+        correct: false
+        explanation: Las diferencias invisibles introducen variabilidad y fallos difíciles de diagnosticar.
+  - external_id: "2.2-003"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Después de actualizar `@playwright/test`, la ejecución informa que falta el navegador esperado. ¿Cuál es el primer paso apropiado?
+    explanation: |
+      El paquete y los binarios se versionan de manera coordinada, por lo que deben reinstalarse los navegadores compatibles.
+    choices:
+      - text: Agregar esperas fijas a todos los tests para dar tiempo a descargar el navegador
+        correct: false
+        explanation: Las esperas del test no instalan binarios ni resuelven incompatibilidades.
+      - text: Desactivar todas las assertions para permitir que el runner continúe sin navegador
+        correct: false
+        explanation: Playwright necesita un navegador; quitar assertions oculta señales sin resolver la causa.
+      - text: Ejecutar `npx playwright install --with-deps`
+        correct: true
+        explanation: Correct — reinstala los navegadores y dependencias compatibles con la versión actual.
+      - text: Borrar el archivo de configuración y compartir una sesión personal existente
+        correct: false
+        explanation: Eliminar configuración e introducir estado personal empeora la reproducibilidad.

@@ -1,0 +1,65 @@
+objective: "1.4"
+questions:
+  - external_id: "1.4-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Cuál es el orden conceptual más sólido antes de implementar un script automático?
+    explanation: |
+      El script debe derivarse de una base, una condición y un caso con resultado esperado; luego produce resultados trazables.
+    choices:
+      - text: Script, herramienta, requisito, resultado y recién después escenario
+        correct: false
+        explanation: Empezar por la implementación impide justificar el caso desde una expectativa válida.
+      - text: Resultado real, defecto, script y luego definición de la necesidad
+        correct: false
+        explanation: El resultado solo puede evaluarse cuando existe una base y una expectativa previas.
+      - text: Base de prueba, condición, caso, script y resultado
+        correct: true
+        explanation: Correct — esa cadena conserva el propósito y la trazabilidad de la prueba.
+      - text: Reporte HTML, cantidad de tests, cobertura y finalmente criterio de aceptación
+        correct: false
+        explanation: Las métricas no sustituyen la derivación del comportamiento esperado.
+  - external_id: "1.4-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué elemento actúa como oráculo de prueba en un caso automatizado?
+    explanation: |
+      El oráculo es la fuente válida que permite decidir si el resultado observado es correcto.
+    choices:
+      - text: La regla de negocio aprobada que determina el resultado esperado
+        correct: true
+        explanation: Correct — una expectativa autorizada permite comparar el comportamiento real.
+      - text: La cantidad total de líneas que contiene el archivo del test
+        correct: false
+        explanation: El tamaño del script no define la corrección del producto.
+      - text: El hecho de que Playwright pueda localizar un botón en el DOM actual
+        correct: false
+        explanation: Encontrar el control habilita una acción, pero no demuestra el resultado de negocio.
+      - text: La preferencia personal de quien implementó el script aunque contradiga los criterios acordados
+        correct: false
+        explanation: Una opinión no acordada no es una fuente válida de expectativa.
+  - external_id: "1.4-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué preguntas puede responder una trazabilidad mantenida correctamente? Seleccioná todas las correctas.
+    explanation: |
+      Conectar requisitos, riesgos, casos, resultados y defectos permite evaluar cobertura e impacto de cambios.
+    choices:
+      - text: Qué requisitos aún no tienen casos asociados
+        correct: true
+        explanation: Correct — la relación requisito-caso expone huecos de cobertura.
+      - text: Qué tests revisar cuando cambia una regla de negocio
+        correct: true
+        explanation: Correct — las relaciones permiten analizar el impacto del cambio.
+      - text: Que un producto está libre de cualquier defecto posible
+        correct: false
+        explanation: La trazabilidad describe relaciones y cobertura; no prueba ausencia total de defectos.
+      - text: Qué herramienta garantiza resultados correctos sin necesidad de una base de prueba
+        correct: false
+        explanation: Ninguna herramienta elimina la necesidad de expectativas y análisis válidos.

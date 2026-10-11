@@ -1,0 +1,65 @@
+objective: "4.3"
+questions:
+  - external_id: "4.3-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Después de enviar un correo inválido, el sistema debe mostrar un error y permanecer en `/registro`. ¿Qué conjunto de assertions cubre mejor el resultado?
+    explanation: |
+      El mensaje confirma el rechazo y la URL confirma que no ocurrió la transición incorrecta.
+    choices:
+      - text: Solo comprobar que el botón recibió un click sin lanzar error
+        correct: false
+        explanation: La acción no prueba el mensaje ni la permanencia en la vista.
+      - text: Verificar el alert y la URL de registro
+        correct: true
+        explanation: Correct — ambas señales representan el comportamiento esperado completo.
+      - text: Contar todas las etiquetas div y comparar el número con una captura anterior
+        correct: false
+        explanation: La estructura interna no demuestra el rechazo correcto del correo.
+      - text: Esperar diez segundos y dar por válido el caso sin leer la interfaz
+        correct: false
+        explanation: El paso del tiempo no constituye una assertion.
+  - external_id: "4.3-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      Una assertion falla por timeout. ¿Cuál es la primera interpretación correcta?
+    explanation: |
+      El timeout indica que una condición no se cumplió dentro del límite; todavía debe investigarse por qué.
+    choices:
+      - text: La causa es siempre que el timeout global tiene un valor demasiado pequeño
+        correct: false
+        explanation: Puede fallar un timeout diferente o una condición que nunca será verdadera.
+      - text: La aplicación contiene con certeza un único defecto de rendimiento
+        correct: false
+        explanation: También puede haber un localizador incorrecto, error funcional o problema de entorno.
+      - text: La condición esperada no apareció a tiempo
+        correct: true
+        explanation: Correct — ese es el significado observable antes del diagnóstico causal.
+      - text: Debe capturarse el error y continuar para conservar el estado verde del pipeline
+        correct: false
+        explanation: Silenciar la expectation destruye la señal del test.
+  - external_id: "4.3-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué prácticas mejoran la mantenibilidad y el diagnóstico? Seleccioná todas las correctas.
+    explanation: |
+      Intención clara, señales semánticas, aislamiento y expectations observables producen fallos útiles.
+    choices:
+      - text: Usar títulos que describan comportamiento y resultado
+        correct: true
+        explanation: Correct — el reporte puede comunicar qué contrato falló.
+      - text: Verificar consecuencias con assertions web-first
+        correct: true
+        explanation: Correct — reduce carreras y conserva una expectativa explícita.
+      - text: Capturar silenciosamente cualquier excepción para que todos los casos pasen
+        correct: false
+        explanation: Ocultar errores vuelve inútil la suite como señal de calidad.
+      - text: Afirmar cada clase y cada div aunque no sean relevantes para el objetivo
+        correct: false
+        explanation: El exceso de contratos de implementación aumenta falsos fallos.

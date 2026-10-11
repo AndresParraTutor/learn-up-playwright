@@ -1,0 +1,23 @@
+objective: "3.3"
+title: Cargar un archivo sin depender del disco
+scenario: |
+  El formulario permite adjuntar una nota de texto y luego muestra su nombre. El laboratorio debe
+  ser autocontenido y no puede depender de una ruta externa.
+setup_sql: |
+  const contenido = Buffer.from('evidencia de prueba');
+task: |
+  Indicá el método de Playwright, el nombre de archivo y el MIME type que usarías para cargar el
+  buffer. Luego definí la evidencia visible que verificarías.
+expected_result: |
+  Se usa `setInputFiles` con `name: 'nota.txt'`, `mimeType: 'text/plain'` y el buffer; después se
+  verifica que la interfaz muestre `nota.txt` o un estado de carga exitosa.
+self_check:
+  - prompt: Método de carga
+    kind: contains
+    value: setInputFiles
+  - prompt: MIME type
+    kind: exact
+    value: text/plain
+  - prompt: Nombre visible esperado
+    kind: exact
+    value: nota.txt

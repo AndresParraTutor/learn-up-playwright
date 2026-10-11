@@ -1,0 +1,65 @@
+objective: "5.1"
+questions:
+  - external_id: "5.1-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Cuál es una buena señal para extraer una función auxiliar?
+    explanation: |
+      La abstracción aporta cuando una operación repetida tiene significado de dominio y un nombre más claro.
+    choices:
+      - text: Dos líneas parecidas aunque representen comportamientos de negocio diferentes
+        correct: false
+        explanation: La similitud sintáctica sola puede crear una abstracción acoplada y confusa.
+      - text: Una operación repetida con intención común
+        correct: true
+        explanation: Correct — el helper puede expresar el dominio y centralizar un cambio coherente.
+      - text: El deseo de ocultar todas las APIs de Playwright detrás de parámetros genéricos
+        correct: false
+        explanation: Ocultar intención y tipos suele dificultar lectura y diagnóstico.
+      - text: La necesidad de compartir una Page global mutable entre todos los workers
+        correct: false
+        explanation: Compartir página rompe aislamiento y no es un objetivo válido de reutilización.
+  - external_id: "5.1-002"
+    type: multi
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué usos de hooks son razonables? Seleccioná todas las correctas.
+    explanation: |
+      Los hooks centralizan preparación o limpieza coherentes sin ocultar dependencias excesivas.
+    choices:
+      - text: Navegar a una ruta común en `beforeEach`
+        correct: true
+        explanation: Correct — cada test recibe la misma precondición dentro de su contexto aislado.
+      - text: Limpiar de forma tolerante recursos creados por cada test
+        correct: true
+        explanation: Correct — el teardown protege ejecuciones posteriores y debe admitir fallos parciales.
+      - text: Crear en `beforeAll` una Page global que todos los workers modifican a la vez
+        correct: false
+        explanation: El estado mutable compartido produce carreras y dependencia.
+      - text: Esconder todo el escenario en un hook para que los tests no muestren sus precondiciones
+        correct: false
+        explanation: Los hooks gigantes dificultan entender qué prepara realmente cada caso.
+  - external_id: "5.1-003"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Dónde debería definirse normalmente una `baseURL` compartida por toda la suite?
+    explanation: |
+      Las opciones transversales de ejecución pertenecen a `playwright.config.ts`.
+    choices:
+      - text: En cada assertion para que la comparación de texto conozca el servidor
+        correct: false
+        explanation: Las assertions no son el lugar de configuración global de navegación.
+      - text: En una variable global mutada por el primer test que termine
+        correct: false
+        explanation: El orden y el estado mutable hacen impredecible la suite.
+      - text: En `playwright.config.ts`
+        correct: true
+        explanation: Correct — centraliza una decisión transversal y permite usar rutas relativas.
+      - text: Dentro de un screenshot para recuperarla visualmente al iniciar el runner
+        correct: false
+        explanation: Una imagen no es configuración ejecutable ni reproducible.

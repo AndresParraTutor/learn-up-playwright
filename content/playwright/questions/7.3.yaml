@@ -1,0 +1,65 @@
+objective: "7.3"
+questions:
+  - external_id: "7.3-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      El proyecto instala `@playwright/test` 1.62.1. ¿Qué imagen reduce diferencias de versión en un job de GitLab CI basado en Ubuntu Noble?
+    explanation: |
+      El paquete y la imagen oficial deben usar la misma versión de Playwright.
+    choices:
+      - text: "`mcr.microsoft.com/playwright:latest`"
+        correct: false
+        explanation: Un tag móvil puede cambiar sin que cambie el repositorio y perder reproducibilidad.
+      - text: "`mcr.microsoft.com/playwright:v1.62.1-noble`"
+        correct: true
+        explanation: Correct — alinea el cliente instalado con los navegadores de la imagen.
+      - text: "`node:latest`"
+        correct: false
+        explanation: Una imagen genérica de Node no aporta por sí sola los navegadores requeridos.
+      - text: Cualquier imagen, porque el paquete nunca depende de versiones de navegador
+        correct: false
+        explanation: La compatibilidad entre paquete, ejecutables y sistema sí importa.
+  - external_id: "7.3-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué configuración de GitLab CI conserva `playwright-report/` incluso cuando los tests fallan?
+    explanation: |
+      Los artifacts pueden configurarse para publicarse con independencia del resultado del job.
+    choices:
+      - text: "`artifacts: { when: always, paths: [playwright-report/] }`"
+        correct: true
+        explanation: Correct — la evidencia queda disponible también para diagnosticar una ejecución fallida.
+      - text: "`artifacts: { when: on_success, paths: [playwright-report/] }`"
+        correct: false
+        explanation: Esa condición impide conservar el reporte.
+      - text: "`script: rm -rf playwright-report/`"
+        correct: false
+        explanation: El comando elimina justamente la ruta que debería publicarse.
+      - text: "`allow_failure: true`"
+        correct: false
+        explanation: Tolerar el estado del job no publica archivos automáticamente.
+  - external_id: "7.3-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué prácticas favorecen un pipeline estable de Playwright en GitLab CI? Seleccioná todas las correctas.
+    explanation: |
+      La estabilidad depende de versiones compatibles, instalación reproducible, aislamiento y evidencia accesible.
+    choices:
+      - text: Alinear el tag de la imagen con la versión de Playwright del proyecto
+        correct: true
+        explanation: Correct — evita incompatibilidades entre el cliente y los navegadores incluidos.
+      - text: Conservar reportes con retención limitada y acceso apropiado
+        correct: true
+        explanation: Correct — facilita el diagnóstico sin retener indefinidamente datos potencialmente sensibles.
+      - text: Habilitar sharding antes de comprobar el aislamiento de datos
+        correct: false
+        explanation: Multiplicar jobs puede amplificar colisiones y flakiness si la suite aún comparte estado.
+      - text: Usar siempre tags móviles para recibir cambios sin revisar el repositorio
+        correct: false
+        explanation: Las actualizaciones implícitas reducen reproducibilidad y dificultan el diagnóstico.

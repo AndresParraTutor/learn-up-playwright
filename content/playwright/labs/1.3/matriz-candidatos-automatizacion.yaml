@@ -1,0 +1,25 @@
+objective: "1.3"
+title: Priorizar candidatos para automatización
+scenario: |
+  El equipo debe elegir entre automatizar un checkout estable que se repite cada día, una
+  evaluación estética única y un formulario experimental que cambia semanalmente.
+setup_sql: |
+  Candidato A: checkout crítico, estable, diario y con resultado observable.
+  Candidato B: valoración estética única y subjetiva.
+  Candidato C: formulario de bajo riesgo que cambia cada semana.
+task: |
+  Elegí el primer candidato a automatizar. Indicá un beneficio esperado y un riesgo de
+  mantenimiento que deberías vigilar en la suite resultante.
+expected_result: |
+  El checkout es el mejor candidato. Un beneficio es feedback repetible y temprano; un riesgo
+  es la flakiness o el costo de mantenimiento si el test se acopla a detalles inestables.
+self_check:
+  - prompt: Candidato elegido
+    kind: contains
+    value: checkout
+  - prompt: Beneficio principal
+    kind: contains
+    value: feedback
+  - prompt: Riesgo técnico a vigilar
+    kind: contains
+    value: flak

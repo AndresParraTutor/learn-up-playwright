@@ -1,0 +1,23 @@
+objective: "2.3"
+title: Ejecutar e interpretar el primer test
+scenario: |
+  Creaste `tests/panel.spec.ts` con una assertion sobre un encabezado. Querés ejecutarlo solo en
+  Chromium, ver el navegador y luego abrir el reporte.
+setup_sql: |
+  npx playwright test tests/panel.spec.ts --project=chromium --headed
+task: |
+  Ejecutá conceptualmente el comando provisto. Indicá el comando para abrir el reporte y el estado
+  que esperarías si la assertion encuentra el encabezado visible.
+expected_result: |
+  El archivo se ejecuta en Chromium con ventana visible; `npx playwright show-report` abre el
+  reporte; el caso termina como passed.
+self_check:
+  - prompt: Comando para abrir el reporte
+    kind: exact
+    value: npx playwright show-report
+  - prompt: Estado esperado del test
+    kind: contains
+    value: passed
+  - prompt: Flag que muestra el navegador
+    kind: exact
+    value: --headed

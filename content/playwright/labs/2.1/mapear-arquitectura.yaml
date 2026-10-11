@@ -1,0 +1,25 @@
+objective: "2.1"
+title: Mapear Browser, Context y Page
+scenario: |
+  Dos tests deben ejecutarse en paralelo sin compartir cookies. Cada uno abre una pestaña y usa
+  una sesión distinta, aunque el runner pueda reutilizar procesos de navegador.
+setup_sql: |
+  Test A -> sesión de Ana
+  Test B -> sesión de Bruno
+  Requisito: ningún test puede leer cookies del otro.
+task: |
+  Identificá qué objeto representa el proceso, cuál separa las sesiones y cuál representa cada
+  pestaña. Explicá dónde debe vivir el estado aislado.
+expected_result: |
+  Browser representa el proceso; BrowserContext separa cookies y almacenamiento; Page representa
+  la pestaña. Cada test necesita su propio contexto.
+self_check:
+  - prompt: Objeto que separa las sesiones
+    kind: exact
+    value: BrowserContext
+  - prompt: Objeto que representa una pestaña
+    kind: exact
+    value: Page
+  - prompt: Objeto que representa el proceso de navegador
+    kind: exact
+    value: Browser

@@ -1,0 +1,65 @@
+objective: "1.5"
+questions:
+  - external_id: "1.5-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Un campo acepta edades entre 18 y 120 inclusive. ¿Qué conjunto aplica mejor análisis de valores límite?
+    explanation: |
+      El análisis de límites ejercita las fronteras y sus vecinos inmediatos.
+    choices:
+      - text: 30, 40 y 50
+        correct: false
+        explanation: Son valores internos y no ejercitan ninguna frontera de la regla.
+      - text: 17, 18, 19, 119, 120 y 121
+        correct: true
+        explanation: Correct — cubre ambos límites junto con los valores inmediatamente adyacentes.
+      - text: 18, 50 y 120 repetidos en tres navegadores distintos
+        correct: false
+        explanation: Incluye fronteras, pero omite sus vecinos inválidos y mezcla otra dimensión.
+      - text: Todos los números enteros posibles desde cero hasta diez mil
+        correct: false
+        explanation: La enumeración exhaustiva agrega costo sin aprovechar la técnica de selección.
+  - external_id: "1.5-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      El resultado de una compra depende de usuario activo, pago válido y stock disponible. ¿Qué técnica representa mejor las combinaciones de reglas?
+    explanation: |
+      Las tablas de decisión relacionan combinaciones de condiciones con acciones o resultados distintos.
+    choices:
+      - text: Análisis de valores límite aplicado solamente al largo del nombre
+        correct: false
+        explanation: Los límites sirven para fronteras de valores, no para reglas booleanas combinadas.
+      - text: Una captura de pantalla única del checkout exitoso
+        correct: false
+        explanation: Una captura no modela las combinaciones ni revela reglas omitidas.
+      - text: Una tabla de decisión con condiciones y resultados
+        correct: true
+        explanation: Correct — la tabla hace explícita cada regla relevante y su resultado esperado.
+      - text: Un test E2E largo que elige combinaciones al azar sin registrar cobertura
+        correct: false
+        explanation: La selección aleatoria sin modelo no demuestra qué reglas fueron cubiertas.
+  - external_id: "1.5-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué factores son válidos para priorizar casos basada en riesgo? Seleccioná todas las correctas.
+    explanation: |
+      La priorización considera probabilidad, impacto y contexto para obtener información importante antes.
+    choices:
+      - text: Impacto de un fallo sobre personas o negocio
+        correct: true
+        explanation: Correct — un impacto alto eleva la prioridad aunque el escenario no sea frecuente.
+      - text: Probabilidad e historial de defectos del área
+        correct: true
+        explanation: Correct — la evidencia de fallos previos ayuda a estimar exposición.
+      - text: Orden alfabético de los nombres de archivo de la suite
+        correct: false
+        explanation: El nombre del archivo no representa riesgo ni valor de detección.
+      - text: Preferencia por ejecutar primero el test más largo aunque cubra una función irrelevante
+        correct: false
+        explanation: La duración por sí sola no justifica prioridad y puede retrasar señales críticas.

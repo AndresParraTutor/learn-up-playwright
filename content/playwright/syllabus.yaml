@@ -1,0 +1,250 @@
+topic_slug: playwright
+topic_name: Automatización de testing con Playwright
+content_language: Español latinoamericano
+notebooklm_output_language: es_419
+syllabus_version: v1
+objective_summary: >
+  Completar íntegramente el programa introductorio provisto y desarrollar una base
+  práctica para analizar, diseñar, priorizar, implementar, organizar, depurar y ejecutar
+  pruebas E2E con Playwright y TypeScript, incluida una introducción a CI/CD.
+assessment:
+  enabled: false
+  question_count: 50
+  minutes: 60
+  scoring: percent
+  pass_pct: 75
+  penalty_for_wrong_answers: false
+modules:
+  labs: true
+  strategy: false
+domains:
+  - code: "1"
+    name: Introducción al testing automatizado
+    weight_pct: 12
+    objectives:
+      - code: "1.1"
+        title: Propósito del testing, QA y defectos
+        topics:
+          - Objetivos de las pruebas
+          - Testing y aseguramiento de calidad
+          - Testing y debugging
+          - Error, defecto, fallo y causa raíz
+          - Rol de QA Automation
+      - code: "1.2"
+        title: Niveles, tipos y alcance de las pruebas
+        topics:
+          - Testing manual y automatizado
+          - Pruebas de componente, integración, sistema y aceptación
+          - Testing funcional y no funcional
+          - Smoke testing
+          - Confirmation testing y regression testing
+          - Testing end-to-end
+      - code: "1.3"
+        title: Testing E2E, herramientas y decisión de automatizar
+        topics:
+          - Propósito y límites del testing E2E
+          - Selenium
+          - Cypress
+          - Playwright
+          - Comparación introductoria de enfoques
+          - Beneficios y riesgos de la automatización
+          - Mantenimiento, flakiness y falsa confianza
+      - code: "1.4"
+        title: De la base de prueba al caso trazable
+        topics:
+          - Base de prueba y criterios de aceptación
+          - Condiciones y escenarios de prueba
+          - Resultados esperados
+          - Trazabilidad entre requisito, caso, resultado y defecto
+          - Concepto de pipeline de calidad
+      - code: "1.5"
+        title: Diseño sistemático y priorización de casos
+        topics:
+          - Particiones de equivalencia
+          - Análisis de valores límite
+          - Tablas de decisión
+          - Transiciones de estado
+          - Cobertura y priorización basada en riesgo
+  - code: "2"
+    name: Fundamentos de Playwright
+    weight_pct: 14
+    objectives:
+      - code: "2.1"
+        title: Playwright, arquitectura y ecosistema
+        topics:
+          - Qué es Playwright
+          - Navegador, contexto y página
+          - Chromium, Firefox y WebKit
+          - JavaScript, TypeScript, Python y .NET
+      - code: "2.2"
+        title: Preparación del entorno con Node.js y npm
+        topics:
+          - Requisitos del entorno
+          - Inicialización con npm
+          - Instalación de navegadores
+          - Estructura de un proyecto Playwright
+          - Archivo de configuración
+      - code: "2.3"
+        title: Primer test y Playwright Test
+        topics:
+          - Funciones test y expect
+          - Fixture page
+          - Ejecución desde consola
+          - Modo headless y headed
+          - Interpretación de resultados
+  - code: "3"
+    name: Automatización de interacciones web
+    weight_pct: 18
+    objectives:
+      - code: "3.1"
+        title: Selectores y localizadores resilientes
+        topics:
+          - Localizadores por role
+          - Localizadores por text y label
+          - Localizadores CSS
+          - Contratos explícitos con test id
+          - Criterios de resiliencia
+      - code: "3.2"
+        title: Acciones con controles de formulario
+        topics:
+          - Click
+          - Entrada de texto con fill
+          - Opciones select
+          - Checkbox y radio button
+          - Teclado y foco
+      - code: "3.3"
+        title: Carga de archivos y flujos completos
+        topics:
+          - Carga de archivos
+          - Automatización de login
+          - Automatización de formularios
+          - Envío de datos
+          - Validación inicial de mensajes en pantalla
+      - code: "3.4"
+        title: Auto-waiting y navegación
+        topics:
+          - Verificaciones de accionabilidad
+          - Esperas automáticas
+          - Navegación explícita con goto
+          - Navegación provocada por interacciones
+          - Esperas explícitas justificadas
+  - code: "4"
+    name: Validaciones y assertions
+    weight_pct: 14
+    objectives:
+      - code: "4.1"
+        title: Fundamentos de assertions web-first
+        topics:
+          - Propósito de una assertion
+          - Función expect
+          - Assertions con reintento automático
+          - Assertions genéricas
+          - Uso correcto de await
+      - code: "4.2"
+        title: Validaciones de texto, atributos y estados
+        topics:
+          - Texto visible
+          - Atributos
+          - Visibilidad
+          - Habilitación y edición
+          - Estado seleccionado
+      - code: "4.3"
+        title: Validaciones de URL, errores y buenas prácticas
+        topics:
+          - Validación de URL
+          - Resultados esperados
+          - Mensajes de fallo
+          - Manejo de errores y timeouts
+          - Casos de prueba completos y mantenibles
+  - code: "5"
+    name: Organización de tests
+    weight_pct: 18
+    objectives:
+      - code: "5.1"
+        title: Organización modular y reutilización
+        topics:
+          - Estructura de carpetas y archivos
+          - Agrupación con describe
+          - Hooks de preparación y limpieza
+          - Funciones auxiliares
+          - Reutilización sin acoplamiento excesivo
+      - code: "5.2"
+        title: Page Object Model
+        topics:
+          - Responsabilidad de un page object
+          - Encapsulación de localizadores
+          - Métodos de interacción
+          - Uso desde los tests
+          - Mantenimiento del modelo
+      - code: "5.3"
+        title: Parametrización y datos de prueba
+        topics:
+          - Tests parametrizados
+          - Títulos únicos
+          - Datos de prueba
+          - Fixtures personalizadas
+          - Setup y teardown de datos
+      - code: "5.4"
+        title: Ejecución paralela y aislamiento
+        topics:
+          - Workers
+          - Paralelismo por archivo y por test
+          - Aislamiento con browser contexts
+          - Datos seguros para ejecución paralela
+          - Modos seriales y sus límites
+  - code: "6"
+    name: Debugging y reportes
+    weight_pct: 14
+    objectives:
+      - code: "6.1"
+        title: Inspector y debugging paso a paso
+        topics:
+          - Playwright Inspector
+          - Modo debug
+          - Breakpoints
+          - UI Mode
+          - Análisis de fallos
+      - code: "6.2"
+        title: Evidencias de ejecución
+        topics:
+          - Screenshots
+          - Videos
+          - Logs
+          - Trazas
+          - Trace Viewer
+      - code: "6.3"
+        title: Reportes HTML y troubleshooting
+        topics:
+          - Reporte HTML
+          - Filtros y detalle de resultados
+          - Timeouts y reintentos
+          - Diagnóstico sistemático
+          - Reporte de defectos reproducibles
+  - code: "7"
+    name: Integración con CI/CD
+    weight_pct: 10
+    objectives:
+      - code: "7.1"
+        title: CI/CD y estrategia de testing en equipos ágiles
+        topics:
+          - Concepto de integración continua
+          - Ejecución automática de tests
+          - Pipeline de calidad
+          - Quality gates introductorios
+          - Estrategia de testing en equipos ágiles
+      - code: "7.2"
+        title: Pipeline introductorio con GitHub Actions
+        topics:
+          - Workflow y eventos
+          - Instalación con npm ci
+          - Instalación de navegadores y dependencias
+          - Ejecución de Playwright Test
+          - Publicación de artefactos
+      - code: "7.3"
+        title: Pipeline introductorio con GitLab CI
+        topics:
+          - Archivo gitlab-ci.yml
+          - Imagen oficial de Playwright
+          - Job de pruebas
+          - Resultados y artefactos
+          - Estabilidad y recursos en CI

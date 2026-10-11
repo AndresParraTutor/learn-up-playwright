@@ -1,0 +1,24 @@
+objective: "7.1"
+title: Diseñar un pipeline según riesgo y velocidad
+scenario: |
+  El equipo dispone de un smoke crítico de 4 minutos y una regresión multidispositivo de 35 minutos.
+  Necesita feedback temprano en cada pull request sin perder cobertura antes de liberar.
+setup_sql: |
+  smoke: 4 minutos
+  regresión: 35 minutos
+task: |
+  Asigná una suite al gate de pull request y otra a una etapa posterior. Indicá qué debe hacer el
+  equipo si el smoke se vuelve flaky en vez de ignorar el estado rojo.
+expected_result: |
+  El smoke se ejecuta en pull requests; la regresión amplia se reserva para main, una ejecución
+  programada o la liberación; la inestabilidad se investiga y gestiona como trabajo visible.
+self_check:
+  - prompt: Suite del gate de pull request
+    kind: contains
+    value: smoke
+  - prompt: Suite de la etapa posterior
+    kind: contains
+    value: regresión
+  - prompt: Respuesta ante flakiness
+    kind: contains
+    value: investigar

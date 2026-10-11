@@ -1,0 +1,24 @@
+objective: "3.2"
+title: Automatizar controles de un formulario
+scenario: |
+  Un formulario local contiene nombre, país, checkbox de novedades y botón Guardar. Al enviarlo,
+  aparece un estado “Preferencias guardadas”.
+setup_sql: |
+  await page.getByLabel('Nombre').fill('Lucía');
+  await page.getByLabel('País').selectOption('AR');
+task: |
+  Completá conceptualmente el test marcando el checkbox, enviando el formulario y verificando el
+  mensaje. Nombrá la acción semántica para dejar el checkbox marcado.
+expected_result: |
+  Se usa `check()`, luego click sobre Guardar y una assertion `toHaveText` o `toBeVisible` sobre el
+  estado final.
+self_check:
+  - prompt: Acción para dejar marcado el checkbox
+    kind: exact
+    value: check()
+  - prompt: Acción para activar el botón
+    kind: contains
+    value: click
+  - prompt: Assertion sugerida para el texto final
+    kind: contains
+    value: toHaveText

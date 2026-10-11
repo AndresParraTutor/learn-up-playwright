@@ -1,0 +1,22 @@
+objective: "6.1"
+title: Diagnosticar un localizador ambiguo
+scenario: |
+  Un test falla porque `getByRole('button', { name: 'Eliminar' })` encuentra tres coincidencias.
+  Solo debe accionar la fila “Proyecto Alfa”.
+setup_sql: |
+  npx playwright test tests/proyectos.spec.ts --debug
+task: |
+  Elegí la herramienta para inspeccionar coincidencias y describí el refinamiento del localizador.
+  No uses `.first()` ni desactives strictness.
+expected_result: |
+  Se usa Inspector, se localiza la fila por “Proyecto Alfa” y desde allí el botón Eliminar.
+self_check:
+  - prompt: Herramienta de depuración
+    kind: contains
+    value: Inspector
+  - prompt: Contenedor que debe localizarse primero
+    kind: contains
+    value: fila
+  - prompt: Texto que identifica la entidad
+    kind: exact
+    value: Proyecto Alfa

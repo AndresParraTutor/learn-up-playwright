@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "candidate_roots": [
+    "hosted"
+  ],
+  "topics": [
+    "playwright"
+  ],
+  "required_paths": [
+    "hosted/deployment-policy.json",
+    "media/playwright/manifest.json",
+    "hosted/generated/playwright.seed.json",
+    "hosted/generated/playwright.media.json",
+    "hosted/generated/playwright.build-manifest.json",
+    "hosted/site/package.json",
+    "hosted/site/package-lock.json",
+    "hosted/site/tsconfig.json",
+    "hosted/site/.openai/hosting.json",
+    "hosted/site/migrations/0000_content_identity.sql",
+    "hosted/site/migrations/0001_learning_state.sql",
+    "hosted/site/migrations/0002_qa_limits.sql",
+    "hosted/site/migrations/0003_qa_hard_limits.sql",
+    "hosted/site/migrations/0004_attempt_finalization.sql",
+    "hosted/site/src/server/index.ts",
+    "hosted/site/src/server/learning.ts",
+    "hosted/site/src/server/qa.ts",
+    "hosted/site/src/server/request.ts",
+    "hosted/site/tests/server.test.mjs",
+    "hosted/site/tests/schema.test.mjs"
+  ],
+  "ignored_worktree_components": [
+    "dist",
+    "node_modules"
+  ],
+  "forbidden_path_components": [
+    ".learnup-backups",
+    ".venv",
+    "__pycache__",
+    "media",
+    "node_modules",
+    "sources"
+  ],
+  "forbidden_filenames": [
+    ".env",
+    ".notebook.json",
+    ".sources_added.json",
+    ".video_tasks.json",
+    "learn_up.duckdb",
+    "learn_up.duckdb.wal"
+  ],
+  "forbidden_suffixes": [
+    ".duckdb",
+    ".duckdb.wal",
+    ".learnup.zip",
+    ".mp4"
+  ]
+}

@@ -1,0 +1,65 @@
+objective: "5.4"
+questions:
+  - external_id: "5.4-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué unidad usa Playwright Test para ejecutar archivos en paralelo?
+    explanation: |
+      El runner crea procesos worker independientes que ejecutan archivos y administran fixtures.
+    choices:
+      - text: Un screenshot global compartido
+        correct: false
+        explanation: Las imágenes son artefactos, no unidades de ejecución.
+      - text: Procesos worker
+        correct: true
+        explanation: Correct — los workers permiten concurrencia con memoria de proceso separada.
+      - text: Una única Page estática para toda la máquina
+        correct: false
+        explanation: Compartir Page global contradice el aislamiento de pruebas.
+      - text: Un timeout convertido automáticamente en hilo de ejecución
+        correct: false
+        explanation: Los límites temporales no crean paralelismo.
+  - external_id: "5.4-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      Una suite pasa con un worker y falla intermitentemente con cuatro. ¿Qué hipótesis conviene investigar primero?
+    explanation: |
+      El paralelismo suele revelar datos, puertos o estado externo compartidos entre casos.
+    choices:
+      - text: Que todos los localizadores por role dejaron de existir por usar más CPU
+        correct: false
+        explanation: El aumento de workers no elimina automáticamente semántica del DOM.
+      - text: Que el reporter HTML transforma assertions correctas en errores
+        correct: false
+        explanation: El reporter presenta resultados y no debería cambiar la lógica del producto.
+      - text: Colisiones de datos o estado compartido
+        correct: true
+        explanation: Correct — la concurrencia amplifica interferencias que el orden serial ocultaba.
+      - text: Que TypeScript requiere un lenguaje diferente para cada proceso worker
+        correct: false
+        explanation: Todos los workers pueden ejecutar la misma suite TypeScript.
+  - external_id: "5.4-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué propiedades habilitan paralelismo confiable? Seleccioná todas las correctas.
+    explanation: |
+      Los casos deben ejecutarse solos, controlar sus datos y no depender del orden.
+    choices:
+      - text: Cada test prepara sus propias precondiciones
+        correct: true
+        explanation: Correct — puede ejecutarse de forma aislada o filtrada.
+      - text: Los identificadores evitan colisiones entre workers
+        correct: true
+        explanation: Correct — datos únicos reducen carreras sobre recursos externos.
+      - text: El segundo test necesita que el primero cree obligatoriamente su entidad
+        correct: false
+        explanation: La dependencia de orden impide ejecución independiente.
+      - text: Todos los tests modifican la misma cuenta mutable al mismo tiempo
+        correct: false
+        explanation: Compartir la entidad produce interferencia y resultados no deterministas.

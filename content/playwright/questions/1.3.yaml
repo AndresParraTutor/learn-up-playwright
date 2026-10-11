@@ -1,0 +1,65 @@
+objective: "1.3"
+questions:
+  - external_id: "1.3-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué escenario es el mejor candidato inicial para automatización E2E?
+    explanation: |
+      Las rutas críticas, repetidas, observables y controlables suelen ofrecer una relación favorable entre valor y mantenimiento.
+    choices:
+      - text: Una exploración visual única de una función cuyo diseño cambia diariamente
+        correct: false
+        explanation: La incertidumbre y el cambio frecuente elevan el mantenimiento y favorecen exploración manual inicial.
+      - text: Un checkout crítico y estable ejecutado antes de cada liberación
+        correct: true
+        explanation: Correct — combina alto riesgo, repetición y un resultado observable.
+      - text: Toda combinación posible de una pantalla sin priorizar riesgos ni frecuencia
+        correct: false
+        explanation: Automatizar exhaustivamente sin selección produce costo y poca información marginal.
+      - text: Una valoración subjetiva de si la nueva identidad visual resulta atractiva
+        correct: false
+        explanation: La evaluación estética carece de un oráculo estable adecuado para este E2E.
+  - external_id: "1.3-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué caracteriza a un test flaky?
+    explanation: |
+      La flakiness aparece cuando el resultado cambia sin una modificación relevante del comportamiento bajo prueba.
+    choices:
+      - text: Siempre falla porque el requisito esperado está implementado incorrectamente
+        correct: false
+        explanation: Un fallo determinista puede señalar un defecto real, pero no es flaky por definición.
+      - text: Solo se ejecuta manualmente y requiere observación de una persona experta
+        correct: false
+        explanation: La forma manual de ejecución no define flakiness.
+      - text: Alterna entre pasar y fallar bajo condiciones supuestamente equivalentes
+        correct: true
+        explanation: Correct — la variación injustificada del resultado erosiona la confianza en la señal.
+      - text: Tarda más que una prueba de componente porque recorre varias capas integradas
+        correct: false
+        explanation: La duración de un E2E no implica por sí sola inestabilidad.
+  - external_id: "1.3-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué factores deberían influir al elegir entre Selenium, Cypress y Playwright? Seleccioná todas las correctas.
+    explanation: |
+      La elección depende del contexto técnico y organizacional; no existe una herramienta universalmente superior.
+    choices:
+      - text: Navegadores, lenguaje y ecosistema de testing requeridos
+        correct: true
+        explanation: Correct — las capacidades y la integración con el stack condicionan la elección.
+      - text: Experiencia del equipo e integración con CI
+        correct: true
+        explanation: Correct — adopción, operación y diagnóstico forman parte del costo real.
+      - text: Cantidad de mensajes publicitarios que afirman que una herramienta elimina todos los defectos
+        correct: false
+        explanation: Las afirmaciones comerciales no reemplazan evidencia ni requisitos del contexto.
+      - text: Preferencia por automatizar todos los casos aunque no exista un resultado observable
+        correct: false
+        explanation: La ausencia de un oráculo estable hace débil el caso independientemente de la herramienta.

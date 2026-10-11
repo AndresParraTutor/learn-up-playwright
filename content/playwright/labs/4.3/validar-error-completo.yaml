@@ -1,0 +1,23 @@
+objective: "4.3"
+title: Validar un resultado de error completo
+scenario: |
+  Al enviar `sin-arroba` en el registro, la aplicación debe mostrar “Ingresá un correo válido” y
+  no debe abandonar `/registro`.
+setup_sql: |
+  await page.getByLabel('Correo').fill('sin-arroba');
+  await page.getByRole('button', { name: 'Crear cuenta' }).click();
+task: |
+  Identificá las dos assertions web-first necesarias. No uses pausas ni captures silenciosamente
+  los errores.
+expected_result: |
+  Se valida el texto del alert y la URL `/registro` con `toHaveText` y `toHaveURL`.
+self_check:
+  - prompt: Matcher para el mensaje
+    kind: exact
+    value: toHaveText
+  - prompt: Matcher para la navegación
+    kind: exact
+    value: toHaveURL
+  - prompt: Ruta en la que debe permanecer
+    kind: exact
+    value: /registro

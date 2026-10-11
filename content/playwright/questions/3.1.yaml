@@ -1,0 +1,65 @@
+objective: "3.1"
+questions:
+  - external_id: "3.1-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Cuál es el localizador preferible para un botón accesible cuyo nombre visible es “Guardar”?
+    explanation: |
+      El localizador por role y nombre refleja cómo se percibe la interfaz y suele resistir cambios de estructura.
+    choices:
+      - text: "`page.getByRole('button', { name: 'Guardar' })`"
+        correct: true
+        explanation: Correct — expresa semántica y nombre accesible del control.
+      - text: "`page.locator('div > div:nth-child(4) > button.primary')`"
+        correct: false
+        explanation: La cadena depende del layout y puede romperse ante cambios inocuos.
+      - text: "`page.locator('button').nth(2)`"
+        correct: false
+        explanation: Selecciona arbitrariamente y no comunica la intención del caso.
+      - text: "`page.getByText('Guardar').first()`"
+        correct: false
+        explanation: Puede coincidir con texto no interactivo o elegir una coincidencia accidental.
+  - external_id: "3.1-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      Hay varios botones “Eliminar”, uno por fila. ¿Cuál es la solución más resiliente?
+    explanation: |
+      Refinar desde la fila identificada por contenido conserva el contexto y resuelve la ambigüedad.
+    choices:
+      - text: Usar siempre `.first()` para que Playwright no informe múltiples coincidencias
+        correct: false
+        explanation: Elegir la primera puede apuntar a otra fila cuando cambia el orden.
+      - text: Agregar una pausa y hacer click por coordenadas sobre la tercera fila
+        correct: false
+        explanation: Tiempo y coordenadas no describen la entidad que se desea eliminar.
+      - text: Localizar la fila por su contenido y dentro de ella el botón
+        correct: true
+        explanation: Correct — el contexto de la fila identifica de manera estable el control correcto.
+      - text: Desactivar strictness mediante JavaScript y accionar todos los botones encontrados
+        correct: false
+        explanation: Accionar varias coincidencias cambia el comportamiento y oculta la ambigüedad.
+  - external_id: "3.1-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Cuándo puede ser apropiado un test id? Seleccioná todas las correctas.
+    explanation: |
+      Un test id es un contrato explícito útil cuando la señal semántica no es suficiente o estable.
+    choices:
+      - text: Cuando no existe una semántica visible que identifique de forma única el dato
+        correct: true
+        explanation: Correct — el contrato técnico puede aportar una identidad estable.
+      - text: Cuando el equipo acuerda mantenerlo como parte del contrato de testing
+        correct: true
+        explanation: Correct — su estabilidad depende de que se trate como interfaz intencional.
+      - text: Para reemplazar todos los roles y labels aunque sean claros y accesibles
+        correct: false
+        explanation: Las señales orientadas a la persona suelen comunicar mejor el comportamiento.
+      - text: Para seleccionar un nodo mediante una clase generada que cambia en cada build
+        correct: false
+        explanation: Una clase efímera no se vuelve estable por llamarla test id.

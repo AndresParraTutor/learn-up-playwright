@@ -1,0 +1,23 @@
+objective: "3.1"
+title: Refactorizar localizadores frágiles
+scenario: |
+  Un test usa `#app > div:nth-child(2) > button.primary` para guardar un formulario. El botón
+  tiene role `button`, nombre accesible “Guardar cambios” y está dentro de una región “Perfil”.
+setup_sql: |
+  const region = page.getByRole('region', { name: 'Perfil' });
+task: |
+  Escribí un localizador resiliente desde la región y explicá por qué no elegirías `.first()` si
+  aparecen varios botones con el mismo nombre.
+expected_result: |
+  El localizador parte de la región y usa role/nombre. La strictness debe revelar ambigüedad en vez
+  de seleccionar una coincidencia accidental.
+self_check:
+  - prompt: Método de localización semántica
+    kind: contains
+    value: getByRole
+  - prompt: Nombre accesible del botón
+    kind: contains
+    value: Guardar cambios
+  - prompt: Comportamiento que debe revelar coincidencias múltiples
+    kind: contains
+    value: strict

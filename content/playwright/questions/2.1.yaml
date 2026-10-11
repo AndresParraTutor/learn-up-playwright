@@ -1,0 +1,65 @@
+objective: "2.1"
+questions:
+  - external_id: "2.1-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué representa un `BrowserContext` en el modelo de Playwright?
+    explanation: |
+      Un contexto es un entorno aislado similar a un perfil nuevo, con cookies y almacenamiento propios.
+    choices:
+      - text: Un archivo de configuración compartido por todas las suites y lenguajes
+        correct: false
+        explanation: La configuración define opciones, pero no es el contenedor de estado del navegador.
+      - text: Una pestaña individual que siempre comparte sesión con cualquier otro test
+        correct: false
+        explanation: Una pestaña es una Page y el aislamiento evita compartir sesión por defecto.
+      - text: Un perfil de navegador aislado y económico
+        correct: true
+        explanation: Correct — el contexto separa cookies, almacenamiento y sesiones entre pruebas.
+      - text: Un proceso CI dedicado exclusivamente a instalar dependencias del sistema operativo
+        correct: false
+        explanation: La preparación de CI está fuera del modelo Browser-Context-Page.
+  - external_id: "2.1-002"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué capacidades agrega Playwright Test sobre la biblioteca de automatización? Seleccioná todas las correctas.
+    explanation: |
+      El runner integra organización, assertions, fixtures, paralelismo y reportes alrededor de las APIs del navegador.
+    choices:
+      - text: Descubrimiento y ejecución organizada de casos
+        correct: true
+        explanation: Correct — el runner registra, filtra y coordina los tests.
+      - text: Fixtures, assertions y reporters integrados
+        correct: true
+        explanation: Correct — esas capacidades forman parte del ecosistema Playwright Test.
+      - text: Garantía matemática de que ninguna aplicación contiene defectos
+        correct: false
+        explanation: Ningún runner puede probar ausencia total de defectos.
+      - text: Sustitución obligatoria de cualquier API asíncrona por operaciones sin await
+        correct: false
+        explanation: Las operaciones siguen siendo asíncronas y deben esperarse correctamente.
+  - external_id: "2.1-003"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      En un test de Playwright Test, ¿qué objeto representa normalmente una pestaña y llega como fixture aislada?
+    explanation: |
+      La fixture `page` representa una Page dentro de un BrowserContext administrado por el runner.
+    choices:
+      - text: "`Browser`"
+        correct: false
+        explanation: Browser representa el proceso del navegador, no una pestaña concreta.
+      - text: "`Page`"
+        correct: true
+        explanation: Correct — Page modela una pestaña o superficie de navegación.
+      - text: "`Reporter`"
+        correct: false
+        explanation: Un reporter transforma resultados, pero no controla una página.
+      - text: "`WorkerInfo`"
+        correct: false
+        explanation: WorkerInfo describe la ejecución del worker, no la pestaña del navegador.

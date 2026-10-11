@@ -1,0 +1,23 @@
+objective: "4.1"
+title: Convertir una lectura instantánea en assertion web-first
+scenario: |
+  El estado “Procesado” aparece después de una operación asíncrona. El test actual lee
+  `textContent()` inmediatamente y a veces obtiene “Pendiente”.
+setup_sql: |
+  const status = page.getByRole('status');
+task: |
+  Escribí conceptualmente la expectation que debe reemplazar la lectura instantánea e indicá qué
+  palabra clave no puede omitirse.
+expected_result: |
+  Se usa `await expect(status).toHaveText('Procesado')`. La assertion reintenta y debe esperarse
+  con `await`.
+self_check:
+  - prompt: Matcher web-first
+    kind: exact
+    value: toHaveText
+  - prompt: Texto esperado
+    kind: exact
+    value: Procesado
+  - prompt: Palabra clave asíncrona requerida
+    kind: exact
+    value: await

@@ -1,0 +1,23 @@
+objective: "5.4"
+title: Eliminar una colisión entre workers
+scenario: |
+  Cuatro tests paralelos intentan crear y eliminar `proyecto-demo`. Con un worker pasan; con cuatro
+  aparecen fallos intermitentes y recursos faltantes.
+setup_sql: |
+  const nombre = 'proyecto-demo';
+task: |
+  Proponé una identidad basada en información del worker o test y explicá qué propiedad debe tener
+  cada caso respecto del orden de ejecución.
+expected_result: |
+  El nombre incorpora `workerIndex` y, si hace falta, identidad del test/retry. Cada caso prepara y
+  limpia sus datos sin depender de otro.
+self_check:
+  - prompt: Propiedad de TestInfo útil para diferenciar workers
+    kind: exact
+    value: workerIndex
+  - prompt: Propiedad de ejecución requerida para cada test
+    kind: contains
+    value: independiente
+  - prompt: Causa principal del fallo intermitente
+    kind: contains
+    value: colisión

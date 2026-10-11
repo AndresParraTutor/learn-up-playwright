@@ -1,0 +1,65 @@
+objective: "6.2"
+questions:
+  - external_id: "6.2-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué artefacto ofrece normalmente acciones, snapshots DOM, red, consola y source en una sola vista?
+    explanation: |
+      La traza integra múltiples dimensiones temporales para reconstruir una ejecución.
+    choices:
+      - text: Una captura aislada de la pantalla final
+        correct: false
+        explanation: La captura muestra un instante y no incluye la secuencia completa.
+      - text: Un archivo `package-lock.json`
+        correct: false
+        explanation: El lockfile documenta dependencias y no eventos de una prueba.
+      - text: Una traza de Playwright
+        correct: true
+        explanation: Correct — Trace Viewer reúne acciones, DOM, red, consola y errores.
+      - text: El nombre del worker impreso sin ningún attachment
+        correct: false
+        explanation: La identidad del worker no reconstruye el comportamiento observado.
+  - external_id: "6.2-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué política de video conserva la grabación solo cuando el test falla?
+    explanation: |
+      `retain-on-failure` graba y elimina videos de ejecuciones exitosas, conservando los fallidos.
+    choices:
+      - text: "`video: 'off'`"
+        correct: false
+        explanation: Desactiva por completo la grabación.
+      - text: "`video: 'retain-on-failure'`"
+        correct: true
+        explanation: Correct — mantiene el video de los tests fallidos.
+      - text: "`video: 'on'`"
+        correct: false
+        explanation: Conserva más material del necesario y no se limita a fallos.
+      - text: "`workers: 1`"
+        correct: false
+        explanation: Esa opción controla concurrencia, no la política de videos.
+  - external_id: "6.2-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué precauciones corresponden a artefactos de ejecución? Seleccioná todas las correctas.
+    explanation: |
+      Las evidencias pueden contener datos y ocupar espacio, por lo que requieren control de acceso y retención.
+    choices:
+      - text: Usar datos sintéticos y revisar contenido sensible
+        correct: true
+        explanation: Correct — reduce exposición de información real en capturas y trazas.
+      - text: Definir retención y acceso de artefactos CI
+        correct: true
+        explanation: Correct — limita almacenamiento y personas que pueden consultar la evidencia.
+      - text: Publicar automáticamente cualquier trace en un sitio abierto sin inspeccionarla
+        correct: false
+        explanation: Las trazas pueden contener URLs, payloads o sesiones de prueba.
+      - text: Conservar videos de todas las ejecuciones para siempre aunque nunca se consulten
+        correct: false
+        explanation: Aumenta costo y exposición sin una necesidad diagnóstica demostrada.

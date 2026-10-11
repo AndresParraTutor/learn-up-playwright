@@ -1,0 +1,65 @@
+objective: "1.2"
+questions:
+  - external_id: "1.2-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Se corrige un defecto específico del checkout y se vuelve a ejecutar exactamente el escenario que lo reveló. ¿Qué propósito tiene esa ejecución?
+    explanation: |
+      La prueba de confirmación verifica que una corrección resolvió el defecto concreto; la regresión busca efectos adversos más amplios.
+    choices:
+      - text: Smoke testing de toda la aplicación antes de desplegar
+        correct: false
+        explanation: Un smoke comprueba un conjunto crítico pequeño, no solo el defecto corregido.
+      - text: Confirmation testing
+        correct: true
+        explanation: Correct — repetir el escenario del defecto comprueba la corrección específica.
+      - text: Regression testing de todas las funciones relacionadas y no relacionadas
+        correct: false
+        explanation: La regresión amplía la búsqueda a comportamientos que podrían verse afectados.
+      - text: Testing no funcional de capacidad y tiempos de respuesta del checkout
+        correct: false
+        explanation: El escenario descrito evalúa comportamiento funcional, no rendimiento.
+  - external_id: "1.2-002"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      Un test automatizado recorre registro, compra y confirmación mediante la interfaz. ¿Qué clasificaciones pueden aplicarse simultáneamente?
+    explanation: |
+      Las clasificaciones representan dimensiones diferentes y pueden coexistir en el mismo caso.
+    choices:
+      - text: Prueba funcional de sistema
+        correct: true
+        explanation: Correct — verifica funciones en el sistema integrado.
+      - text: Prueba end-to-end automatizada
+        correct: true
+        explanation: Correct — recorre el flujo integrado y se ejecuta mediante una herramienta.
+      - text: Prueba estática del código sin ejecutar la aplicación
+        correct: false
+        explanation: El escenario ejecuta dinámicamente la aplicación por la interfaz.
+      - text: Evaluación exhaustiva de toda característica no funcional existente
+        correct: false
+        explanation: Un flujo funcional no cubre automáticamente todas las cualidades no funcionales.
+  - external_id: "1.2-003"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Cuál es la mejor descripción de una suite smoke?
+    explanation: |
+      Smoke es una selección pequeña y rápida de comprobaciones críticas que indica si vale la pena continuar con pruebas más amplias.
+    choices:
+      - text: Todos los casos existentes ejecutados en cada navegador y combinación de datos
+        correct: false
+        explanation: Esa amplitud contradice el propósito acotado y rápido del smoke.
+      - text: Solo pruebas manuales exploratorias sin resultados previamente esperados
+        correct: false
+        explanation: Smoke describe un propósito, no exige ejecución manual ni elimina expectativas.
+      - text: Un conjunto breve de rutas críticas que detecta fallos básicos
+        correct: true
+        explanation: Correct — el smoke ofrece una señal temprana sobre la salud esencial del sistema.
+      - text: Casos dedicados únicamente a medir rendimiento prolongado bajo carga máxima
+        correct: false
+        explanation: Las pruebas de carga persiguen un objetivo no funcional diferente.

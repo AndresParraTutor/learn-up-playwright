@@ -1,0 +1,19 @@
+{
+  "name": "learn-up-sites",
+  "private": true,
+  "version": "1.8.0",
+  "type": "module",
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build:client": "npm --prefix ../../frontend run build -- --mode hosted --outDir ../hosted/site/dist/client --emptyOutDir",
+    "build:server": "node scripts/build-server.mjs",
+    "build": "npm run clean && npm run build:client && npm run build:server && npm run verify",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "verify": "node scripts/verify-build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "~5.6"
+  }
+}

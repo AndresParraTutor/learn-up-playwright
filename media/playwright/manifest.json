@@ -1,0 +1,234 @@
+{
+  "content_version": "v1",
+  "missing_count": 0,
+  "objects": [
+    {
+      "available": true,
+      "bytes": 33039541,
+      "content_id": "topic:playwright:lesson:proposito-testing-qa-defectos",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/proposito-testing-qa-defectos.mp4",
+      "sha256": "f37a633480b12d9cd163567a665840ed6d62c64a5d714a69c6305be0ecdb773c",
+      "source_path": "media/playwright/proposito-testing-qa-defectos.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 37538433,
+      "content_id": "topic:playwright:lesson:niveles-tipos-alcance-pruebas",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/niveles-tipos-alcance-pruebas.mp4",
+      "sha256": "c2ca233ca5906f0d00298176065140275d37c01488dcfadc6e96b79de45ad50f",
+      "source_path": "media/playwright/niveles-tipos-alcance-pruebas.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 41289634,
+      "content_id": "topic:playwright:lesson:testing-e2e-herramientas-automatizacion",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/testing-e2e-herramientas-automatizacion.mp4",
+      "sha256": "68d3dadf4391e53fdaf44bed1da3e83785ed8fd0bd0a16cc0f534b91764ebc1e",
+      "source_path": "media/playwright/testing-e2e-herramientas-automatizacion.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 37345070,
+      "content_id": "topic:playwright:lesson:base-prueba-caso-trazable",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/base-prueba-caso-trazable.mp4",
+      "sha256": "05bb7bf98493a6f00f3d6c089d60508f3a4858201a29cb6d8d72386109f7216d",
+      "source_path": "media/playwright/base-prueba-caso-trazable.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 37398529,
+      "content_id": "topic:playwright:lesson:diseno-priorizacion-casos",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/diseno-priorizacion-casos.mp4",
+      "sha256": "1d8d3d3cbed21d4d2d7779c88b2895d235a001f5299557e0221f7cabdc10fef1",
+      "source_path": "media/playwright/diseno-priorizacion-casos.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 43011315,
+      "content_id": "topic:playwright:lesson:playwright-arquitectura-ecosistema",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/playwright-arquitectura-ecosistema.mp4",
+      "sha256": "3809376414aeb590ec4945e965d27cce6156da1932f25e31fccee349e3ef7923",
+      "source_path": "media/playwright/playwright-arquitectura-ecosistema.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 36491838,
+      "content_id": "topic:playwright:lesson:entorno-node-npm",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/entorno-node-npm.mp4",
+      "sha256": "245ed4bb6d77c17bbb14443d3562372ad4f4e2007cff870d5603079123d57b61",
+      "source_path": "media/playwright/entorno-node-npm.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 23792182,
+      "content_id": "topic:playwright:lesson:primer-test-playwright-test",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/primer-test-playwright-test.mp4",
+      "sha256": "b2449c56a6415a93b3e44c4a6025b67d93ac18c00aa625ccc14d03d67e37a66f",
+      "source_path": "media/playwright/primer-test-playwright-test.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 32573647,
+      "content_id": "topic:playwright:lesson:localizadores-resilientes",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/localizadores-resilientes.mp4",
+      "sha256": "c79a3bf56c94d71367cd49961183009d9ccf019ae05b44546344a566d39c7943",
+      "source_path": "media/playwright/localizadores-resilientes.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 27680081,
+      "content_id": "topic:playwright:lesson:acciones-controles-formulario",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/acciones-controles-formulario.mp4",
+      "sha256": "642f89f2acde09e2ce0af2ff8315f9b8cbe43eca2109c72f432e81f9ccb959bb",
+      "source_path": "media/playwright/acciones-controles-formulario.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 21729445,
+      "content_id": "topic:playwright:lesson:uploads-y-flujos-completos",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/uploads-y-flujos-completos.mp4",
+      "sha256": "005b2a1e44df4bffe92913d46bc6df606cb907a1f57798d1ca258338fa3a7c2f",
+      "source_path": "media/playwright/uploads-y-flujos-completos.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 28992065,
+      "content_id": "topic:playwright:lesson:auto-waiting-navegacion",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/auto-waiting-navegacion.mp4",
+      "sha256": "2d3557a2b5b593ccbc0f22c275baeaf4d0ba57fc0903c5789d896fee87563b79",
+      "source_path": "media/playwright/auto-waiting-navegacion.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 33950894,
+      "content_id": "topic:playwright:lesson:assertions-web-first",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/assertions-web-first.mp4",
+      "sha256": "f91283dd06e7660cfa91cac1421b26dca020711aca88863ee7c22065457bb29b",
+      "source_path": "media/playwright/assertions-web-first.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 34639753,
+      "content_id": "topic:playwright:lesson:validaciones-texto-atributos-estados",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/validaciones-texto-atributos-estados.mp4",
+      "sha256": "3e9c8e221f0c3a7fbe7174f3589ef1aad2d15f509ab1d3974f97199b65e761b7",
+      "source_path": "media/playwright/validaciones-texto-atributos-estados.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 35308879,
+      "content_id": "topic:playwright:lesson:urls-errores-buenas-practicas",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/urls-errores-buenas-practicas.mp4",
+      "sha256": "37ddb019cf9b83edf5021563f0ff3d0a00cfe069d5fec93f0d9709992e916a32",
+      "source_path": "media/playwright/urls-errores-buenas-practicas.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 32611687,
+      "content_id": "topic:playwright:lesson:organizacion-modular-reutilizacion",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/organizacion-modular-reutilizacion.mp4",
+      "sha256": "22f786f2c3ede14af31a8c83276bc4b4d916286d40469b38acea34ce1c6da482",
+      "source_path": "media/playwright/organizacion-modular-reutilizacion.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 29180284,
+      "content_id": "topic:playwright:lesson:page-object-model",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/page-object-model.mp4",
+      "sha256": "bfd4b916cbd0715880cc624662761836cb826f2516058db6126ba73f494ec014",
+      "source_path": "media/playwright/page-object-model.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 41321490,
+      "content_id": "topic:playwright:lesson:parametrizacion-datos-fixtures",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/parametrizacion-datos-fixtures.mp4",
+      "sha256": "b7a3e0e99893fcc6234c5a71c811e50b71307cf814afea5ae032e6680f8300dd",
+      "source_path": "media/playwright/parametrizacion-datos-fixtures.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 33000073,
+      "content_id": "topic:playwright:lesson:paralelismo-aislamiento",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/paralelismo-aislamiento.mp4",
+      "sha256": "bff36e61680756eabd205a440acf2f69f72fe17a50c6edaf7e2442befd73ecb3",
+      "source_path": "media/playwright/paralelismo-aislamiento.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 38543215,
+      "content_id": "topic:playwright:lesson:inspector-debugging",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/inspector-debugging.mp4",
+      "sha256": "69ff836f250a8f787c1b8c85bc3d000d7a994f4461102b71ceb0da45aab85109",
+      "source_path": "media/playwright/inspector-debugging.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 37156330,
+      "content_id": "topic:playwright:lesson:evidencias-ejecucion",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/evidencias-ejecucion.mp4",
+      "sha256": "3bb59e0ff6a4b316b20f2b6dad6b92040aea06880d29c8f8b7f9d92bcb531f75",
+      "source_path": "media/playwright/evidencias-ejecucion.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 38612108,
+      "content_id": "topic:playwright:lesson:reportes-troubleshooting-defectos",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/reportes-troubleshooting-defectos.mp4",
+      "sha256": "ad234d50fbf72ce71292a691d8d6a6579fe3763295165408fe32d1fba988d948",
+      "source_path": "media/playwright/reportes-troubleshooting-defectos.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 32932032,
+      "content_id": "topic:playwright:lesson:ci-cd-estrategia-agil",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/ci-cd-estrategia-agil.mp4",
+      "sha256": "2ecea1007e6c8118d657486bf95b9329c1b147d6b87ca3d003bc471b47551a76",
+      "source_path": "media/playwright/ci-cd-estrategia-agil.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 32777740,
+      "content_id": "topic:playwright:lesson:github-actions",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/github-actions.mp4",
+      "sha256": "35623597609e6b840f2a0d5930ce6ff74f48fe97b0438d3af16c0ffed6177f4d",
+      "source_path": "media/playwright/github-actions.mp4"
+    },
+    {
+      "available": true,
+      "bytes": 36622536,
+      "content_id": "topic:playwright:lesson:gitlab-ci",
+      "content_type": "video/mp4",
+      "object_key": "media/playwright/gitlab-ci.mp4",
+      "sha256": "91b7c597480bf5955159ef2305ed11c3bc2b9839e7538b084c72a3261a1f48e2",
+      "source_path": "media/playwright/gitlab-ci.mp4"
+    }
+  ],
+  "present_count": 25,
+  "schema_version": 1,
+  "topic_id": "topic:playwright"
+}

@@ -1,0 +1,435 @@
+{
+  "content_version": "v1",
+  "inputs": [
+    {
+      "bytes": 527,
+      "path": "ABOUT.md",
+      "sha256": "ce8853ccf8efcb4c173924976f73a2e29437aedc54a5d32f07f05168e2a58a23"
+    },
+    {
+      "bytes": 3542,
+      "path": "content/playwright/CHANGELOG.md",
+      "sha256": "eae885e3f1574eeeba7819048b6ee2c7ab4695fa1a6cf5ef0be680cfed090704"
+    },
+    {
+      "bytes": 1208,
+      "path": "content/playwright/labs/1.1/clasificar-evidencia-y-defectos.yaml",
+      "sha256": "f769fc2888b99b35bb32dda904ce7c92e06cef48c632cbdc31b25be0f741a279"
+    },
+    {
+      "bytes": 1043,
+      "path": "content/playwright/labs/1.2/clasificar-suite.yaml",
+      "sha256": "495c8c75cdb1696c56174b5039ef07a762783f4ccc3aff44783f8ae14658e2c0"
+    },
+    {
+      "bytes": 1054,
+      "path": "content/playwright/labs/1.3/matriz-candidatos-automatizacion.yaml",
+      "sha256": "2fe96339ce7a9caf15b6e678c8cde99dbbc3db1cc46d0886b0195a4764d46272"
+    },
+    {
+      "bytes": 961,
+      "path": "content/playwright/labs/1.4/trazar-caso.yaml",
+      "sha256": "c5d81c85ce22842364fef6279e53104b8d5d538673c53aafaefcd2f1ef29ffcd"
+    },
+    {
+      "bytes": 1016,
+      "path": "content/playwright/labs/1.5/disenar-casos-limite.yaml",
+      "sha256": "edb96a0ef94e8081c5a87f9332aad22971675d28b590ad154c3f7e78d3d8eb72"
+    },
+    {
+      "bytes": 973,
+      "path": "content/playwright/labs/2.1/mapear-arquitectura.yaml",
+      "sha256": "646b99369f06ead6eecaa369f09f290f38fd3217f326d66f65275b69014080a9"
+    },
+    {
+      "bytes": 805,
+      "path": "content/playwright/labs/2.2/preparar-proyecto.yaml",
+      "sha256": "595bdcb8de1a1b6e565a9cefda09308926273179246cf0f222bca0b834793ced"
+    },
+    {
+      "bytes": 899,
+      "path": "content/playwright/labs/2.3/ejecutar-primer-test.yaml",
+      "sha256": "8f06f13d41ec9392cc7650a14e8324d8a3a38252ff0e35c41f1b8c57ceb625eb"
+    },
+    {
+      "bytes": 966,
+      "path": "content/playwright/labs/3.1/refactorizar-localizadores.yaml",
+      "sha256": "26b9274f884f9e3d225cee128da028b363cd585c3408521280e6bae8468d57ec"
+    },
+    {
+      "bytes": 923,
+      "path": "content/playwright/labs/3.2/completar-formulario.yaml",
+      "sha256": "97a88416993aad029c6a9b6242357194130f74d54f26cf37ed7e659025952301"
+    },
+    {
+      "bytes": 888,
+      "path": "content/playwright/labs/3.3/cargar-archivo-memoria.yaml",
+      "sha256": "f3bc142e078a70a7ae0fd1fc49edda854b1c863e5cfef9b6a1e353fb774d58e3"
+    },
+    {
+      "bytes": 926,
+      "path": "content/playwright/labs/3.4/eliminar-espera-fija.yaml",
+      "sha256": "0c6e316caac392e4569a8aff411473603e82de81cc9f1fb2935f5c7ac79f3a3f"
+    },
+    {
+      "bytes": 811,
+      "path": "content/playwright/labs/4.1/convertir-assertion-web-first.yaml",
+      "sha256": "2426cec56944baee5b1156b8092ccd0fba5e3f29fa830c3adf1af647cb991098"
+    },
+    {
+      "bytes": 832,
+      "path": "content/playwright/labs/4.2/elegir-evidencia-semantica.yaml",
+      "sha256": "c323d195b6cdc8a1fabe048d609fada68a48f9ba2d7b7178c5d7315fb292ce51"
+    },
+    {
+      "bytes": 814,
+      "path": "content/playwright/labs/4.3/validar-error-completo.yaml",
+      "sha256": "a19556f6e4fb293ffd3e9b8107669d28471350306f098b06760d6d6735c9d7f0"
+    },
+    {
+      "bytes": 951,
+      "path": "content/playwright/labs/5.1/reorganizar-suite.yaml",
+      "sha256": "f38191537601c2cb6d8331f18945aff864a53c197761eb433a4ab68acb340d13"
+    },
+    {
+      "bytes": 957,
+      "path": "content/playwright/labs/5.2/modelar-pagina-login.yaml",
+      "sha256": "ecb04596da334762e5fc550e6ffc33f1c2a8fe9c9021a7052ea12b264a8f495f"
+    },
+    {
+      "bytes": 807,
+      "path": "content/playwright/labs/5.3/parametrizar-limites.yaml",
+      "sha256": "5ebb5b17eb34782e62442192d3a8264d021eff66b3ba94695ee65c60ef670ad3"
+    },
+    {
+      "bytes": 903,
+      "path": "content/playwright/labs/5.4/eliminar-colision-paralela.yaml",
+      "sha256": "247c58d28c955c85f30ccf1960c74a9c4bf941109ea80afe7226f6f5bfcbeb39"
+    },
+    {
+      "bytes": 822,
+      "path": "content/playwright/labs/6.1/diagnosticar-localizador.yaml",
+      "sha256": "6dd3d0c70b7ac7349ee642ca3d72512c7f58d118e62c40772a332ee068f1fced"
+    },
+    {
+      "bytes": 839,
+      "path": "content/playwright/labs/6.2/elegir-artefacto.yaml",
+      "sha256": "dd12959b9e98fbab9937db264eed51d9c3f644a46af44f9c9a03ee576973d78b"
+    },
+    {
+      "bytes": 830,
+      "path": "content/playwright/labs/6.3/redactar-defecto.yaml",
+      "sha256": "bdd873502efdb649ef4049572d57667515a7e66cc5568f14ea89995da3964074"
+    },
+    {
+      "bytes": 973,
+      "path": "content/playwright/labs/7.1/disenar-pipeline-riesgo.yaml",
+      "sha256": "8b96b7d9e6d81c87ce021ee35a64faa486f63c90e8f47c1c3b123d4543a1d8e5"
+    },
+    {
+      "bytes": 940,
+      "path": "content/playwright/labs/7.2/completar-workflow-github.yaml",
+      "sha256": "5fef5391da40b74b4b72515acf6c93793f89a7fec73a5649cbb0c2997e0e69e1"
+    },
+    {
+      "bytes": 981,
+      "path": "content/playwright/labs/7.3/alinear-imagen-gitlab.yaml",
+      "sha256": "a96355b65ba36b2870955f1be7c944297a6f7972d7f42a4c119c679798ed44b0"
+    },
+    {
+      "bytes": 5762,
+      "path": "content/playwright/lessons/1.1/proposito-testing-qa-defectos.md",
+      "sha256": "9be0f4d14fee178fdc6211446ccc6bb4b08ebd0fd5be922f9d0e8dc3705089e2"
+    },
+    {
+      "bytes": 3821,
+      "path": "content/playwright/lessons/1.2/niveles-tipos-alcance-pruebas.md",
+      "sha256": "2bc25e69996c8cbda9503f8c1ea0a15c13915c4f81edaedd59ea48b1905434e7"
+    },
+    {
+      "bytes": 3986,
+      "path": "content/playwright/lessons/1.3/testing-e2e-herramientas-automatizacion.md",
+      "sha256": "6f28bffb04be0924fee91d26d5ce40485aecf19e7bbb36934619a34468bc7d81"
+    },
+    {
+      "bytes": 3850,
+      "path": "content/playwright/lessons/1.4/base-prueba-caso-trazable.md",
+      "sha256": "a3980e287c43c1cdf6e27a841accf10bb79608f94a43557fd039f75231950314"
+    },
+    {
+      "bytes": 3543,
+      "path": "content/playwright/lessons/1.5/diseno-priorizacion-casos.md",
+      "sha256": "8de0cacfecfdbc9afc1b555b6d6e24a573c8ba18692aca655c31b8449ac41556"
+    },
+    {
+      "bytes": 3890,
+      "path": "content/playwright/lessons/2.1/playwright-arquitectura-ecosistema.md",
+      "sha256": "564808960ba325ab101a94f8aa082ab26bd666808cd94443380ef87ff8e585ab"
+    },
+    {
+      "bytes": 3384,
+      "path": "content/playwright/lessons/2.2/entorno-node-npm.md",
+      "sha256": "8132839a3f2c71a1a6642cda5e1162affd2c79d2471ef71b33d2fdb477f1376c"
+    },
+    {
+      "bytes": 3621,
+      "path": "content/playwright/lessons/2.3/primer-test-playwright-test.md",
+      "sha256": "2a0793b473c3db5f87fccebb6a7eb1bf8287ef67ffbd1c62288499024f962117"
+    },
+    {
+      "bytes": 3892,
+      "path": "content/playwright/lessons/3.1/localizadores-resilientes.md",
+      "sha256": "c0fecc6885daf2e0f9b2a9c7bbf5b14ce9706c813bab0f02a2bfffe550221c43"
+    },
+    {
+      "bytes": 3980,
+      "path": "content/playwright/lessons/3.2/acciones-controles-formulario.md",
+      "sha256": "1d4a8a0e54cc10fcc478f41d870dc3ea83ac4207785f9c7d77234698d7c23726"
+    },
+    {
+      "bytes": 3683,
+      "path": "content/playwright/lessons/3.3/uploads-y-flujos-completos.md",
+      "sha256": "f856ac54b1abcac86fafefba835a9e84d8e20817fb642581c105c5e144555c95"
+    },
+    {
+      "bytes": 3654,
+      "path": "content/playwright/lessons/3.4/auto-waiting-navegacion.md",
+      "sha256": "bb8e22b31057de4e3411cac8fa0fed5b724720e5a0483dbd85b659705d41ae93"
+    },
+    {
+      "bytes": 3298,
+      "path": "content/playwright/lessons/4.1/assertions-web-first.md",
+      "sha256": "8b61887a31b938149ec50cf4f72705ac82444829063627aad188b1ad72749170"
+    },
+    {
+      "bytes": 3307,
+      "path": "content/playwright/lessons/4.2/validaciones-texto-atributos-estados.md",
+      "sha256": "4441e1e7dd26ed12b304bc6f6a80545baf4ea3ac0909cee632f412ee25ec2810"
+    },
+    {
+      "bytes": 3311,
+      "path": "content/playwright/lessons/4.3/urls-errores-buenas-practicas.md",
+      "sha256": "bb68a820e35c63e9fbdd3c929af98b0b20d1efdcb789148c653fb7ab9b2b4082"
+    },
+    {
+      "bytes": 3516,
+      "path": "content/playwright/lessons/5.1/organizacion-modular-reutilizacion.md",
+      "sha256": "169426f6ad93d7d7a574e8eab71786f51576d1ad8bcf0e3823c2506a763b2f46"
+    },
+    {
+      "bytes": 3562,
+      "path": "content/playwright/lessons/5.2/page-object-model.md",
+      "sha256": "33739abfebfb346b305a086c55131c7cc591b4355cac360064740f216977f131"
+    },
+    {
+      "bytes": 3279,
+      "path": "content/playwright/lessons/5.3/parametrizacion-datos-fixtures.md",
+      "sha256": "7c10abdfacd44bf90d16d0133fdcc6be1531126405740c994c64b687874d6dca"
+    },
+    {
+      "bytes": 3359,
+      "path": "content/playwright/lessons/5.4/paralelismo-aislamiento.md",
+      "sha256": "1f3f97688e22a91ecd39ecb4796e4dc4cd634967993fde94dab81aade5960603"
+    },
+    {
+      "bytes": 3094,
+      "path": "content/playwright/lessons/6.1/inspector-debugging.md",
+      "sha256": "55cc81b4af954efa807275cb87fa71a1f3c4f102a7a45ab5a3e46ef9f24479fc"
+    },
+    {
+      "bytes": 3084,
+      "path": "content/playwright/lessons/6.2/evidencias-ejecucion.md",
+      "sha256": "f961170df8252a9b7f75285bec8a78c1725e70d31dead93fab0cbdd1c589b39e"
+    },
+    {
+      "bytes": 3317,
+      "path": "content/playwright/lessons/6.3/reportes-troubleshooting-defectos.md",
+      "sha256": "a192625d141edd5efe58efffab1279bfea3ab8f257246eb8283b49ce371c20a9"
+    },
+    {
+      "bytes": 3111,
+      "path": "content/playwright/lessons/7.1/ci-cd-estrategia-agil.md",
+      "sha256": "f4467a3e7b930ad64578ae4d43c0a0fb6c086969642bf9806c21f7b0cd9dc1f4"
+    },
+    {
+      "bytes": 3165,
+      "path": "content/playwright/lessons/7.2/github-actions.md",
+      "sha256": "67a27dce3f2ac9d1e7afb88da437f344ac86a823884b7b9bb870b1933e77e749"
+    },
+    {
+      "bytes": 2734,
+      "path": "content/playwright/lessons/7.3/gitlab-ci.md",
+      "sha256": "dc6644d2b6a3154da4da9149c646508d2152d9995bfacad83d906931ed039fd2"
+    },
+    {
+      "bytes": 751,
+      "path": "content/playwright/mocks/full_mock_v1.yaml",
+      "sha256": "d47855e3520c30b676b6003736d3ba646aedea19ae781561be7faceaa3abbac3"
+    },
+    {
+      "bytes": 3571,
+      "path": "content/playwright/questions/1.1.yaml",
+      "sha256": "a8f307c56cbf23715cc43a4764591dafb82dc737a4b53eab65912f4deac93310"
+    },
+    {
+      "bytes": 3469,
+      "path": "content/playwright/questions/1.2.yaml",
+      "sha256": "53c97117ffba38c1777736de65343b4d67909b2f7386afa42eb810b855a3451e"
+    },
+    {
+      "bytes": 3585,
+      "path": "content/playwright/questions/1.3.yaml",
+      "sha256": "c8d80d85f80c316663c91d827578a93d25e8b09540d7be383ea010c9100810d1"
+    },
+    {
+      "bytes": 3469,
+      "path": "content/playwright/questions/1.4.yaml",
+      "sha256": "205d0daca6567fac688e830e03d3712d33f3f60c9e0e94bed3318fb750c3d435"
+    },
+    {
+      "bytes": 3360,
+      "path": "content/playwright/questions/1.5.yaml",
+      "sha256": "9f08fb0af2466a65dc1ff020f9131e47b350158bcbc13934bf065ab7d7dbf1c4"
+    },
+    {
+      "bytes": 3175,
+      "path": "content/playwright/questions/2.1.yaml",
+      "sha256": "5c6b3b101fb4fd858b255485c283840372bbe68c71f76ee65c2f4a366ea96f66"
+    },
+    {
+      "bytes": 3364,
+      "path": "content/playwright/questions/2.2.yaml",
+      "sha256": "dbe81b38153d464c2c3a1310ba4f9300fb9d224cb0e3d09e44000013ebc84bfd"
+    },
+    {
+      "bytes": 3084,
+      "path": "content/playwright/questions/2.3.yaml",
+      "sha256": "a4303748f2e8b27996432924ce0548aab5a9f9be84f469186147bf63d403a3ad"
+    },
+    {
+      "bytes": 3369,
+      "path": "content/playwright/questions/3.1.yaml",
+      "sha256": "b561d57cea2487b166545408ca17da5751877c26300df1463451afe9f71f4bc4"
+    },
+    {
+      "bytes": 3245,
+      "path": "content/playwright/questions/3.2.yaml",
+      "sha256": "6c8ed2f69c745a7e78e5ea1bce25c6397108ab9f878206156a9a0fb5c50543f4"
+    },
+    {
+      "bytes": 3279,
+      "path": "content/playwright/questions/3.3.yaml",
+      "sha256": "cdb92392b74eb48bb2d33d7f4d32fe2d6bfe46d430083eb7deea6d56c15ae62e"
+    },
+    {
+      "bytes": 3341,
+      "path": "content/playwright/questions/3.4.yaml",
+      "sha256": "ca7d57c68c8681826853509f96083eebbcf243c9d14680f24c6198b5526d2a68"
+    },
+    {
+      "bytes": 3115,
+      "path": "content/playwright/questions/4.1.yaml",
+      "sha256": "141baf564fc110add61986322b3c9f8aa1c87afa6e00acccf25f3357852d6d4d"
+    },
+    {
+      "bytes": 3173,
+      "path": "content/playwright/questions/4.2.yaml",
+      "sha256": "a076b1c74f63c249c68a9d6200f0813fa62a37ba8535ea2bd8b1167d4f5f7266"
+    },
+    {
+      "bytes": 3376,
+      "path": "content/playwright/questions/4.3.yaml",
+      "sha256": "f1baf9a6094ee1c1fd08701e5e21e484854fc7dba9f2234c9774d94085a75fea"
+    },
+    {
+      "bytes": 3321,
+      "path": "content/playwright/questions/5.1.yaml",
+      "sha256": "e23fe85e26ac96ca278e7b692ff936c446f9745b59f80ecec0c64615a366270b"
+    },
+    {
+      "bytes": 3145,
+      "path": "content/playwright/questions/5.2.yaml",
+      "sha256": "8a71e25740a3af29e8987c5908e91cd1e075d16cd62146670d48cc429a54bf81"
+    },
+    {
+      "bytes": 3189,
+      "path": "content/playwright/questions/5.3.yaml",
+      "sha256": "e5c2151b84f1a76bd590161a42ca137d498dcafca2e00d1d267bb8a949ef09db"
+    },
+    {
+      "bytes": 3114,
+      "path": "content/playwright/questions/5.4.yaml",
+      "sha256": "97b3b7c2532e89c00bfa43f1c9b6d2a6b8ebda00b7fe2197e116dd364961b46b"
+    },
+    {
+      "bytes": 3092,
+      "path": "content/playwright/questions/6.1.yaml",
+      "sha256": "d92ca36739e50a840ce865abed3eb380ef2778f17487c9e656e1a9f95feb1345"
+    },
+    {
+      "bytes": 2971,
+      "path": "content/playwright/questions/6.2.yaml",
+      "sha256": "4fd8ef0f62513aa07f2b790bf2e6e5583418dd3971592246519d12ff49433787"
+    },
+    {
+      "bytes": 2822,
+      "path": "content/playwright/questions/6.3.yaml",
+      "sha256": "ba873763f3ccc664eba12d34d69665f0e02b9b142f21aa336138c8334b861116"
+    },
+    {
+      "bytes": 3595,
+      "path": "content/playwright/questions/7.1.yaml",
+      "sha256": "9053baae1dd65c03545ef44bb0cc20c2975a5681624f334547f58d4566f2ec97"
+    },
+    {
+      "bytes": 3383,
+      "path": "content/playwright/questions/7.2.yaml",
+      "sha256": "52b0ecdd1fc43540cc3d26cd54524c3e0aba0d0440afd37eb4102f99bb7f163f"
+    },
+    {
+      "bytes": 3343,
+      "path": "content/playwright/questions/7.3.yaml",
+      "sha256": "8fdd0a5285765d35b142d9526609afc31c7ecae488f6ead97547573f67d8b587"
+    },
+    {
+      "bytes": 8243,
+      "path": "content/playwright/syllabus.yaml",
+      "sha256": "f5d85bdf39a0d739b844f68308915f939d7d057a87453bc4688e7f884d62bad5"
+    },
+    {
+      "bytes": 10047,
+      "path": "media/playwright/manifest.json",
+      "sha256": "c8f98f9264d70a1f0d6550960ede7cd3546ecaf667064108755d60be8ea54051"
+    },
+    {
+      "bytes": 614,
+      "path": "pyproject.toml",
+      "sha256": "8b6dd34c3bd38f3c20a879ddaf74486cbe96283b0207a88c5df076e426d23fc4"
+    },
+    {
+      "bytes": 2397,
+      "path": "sources/playwright/INTAKE.md",
+      "sha256": "a209b8517911158a1ad3bd4ef022e5ac82816dad55a0eb0acc2cbc7163e0eede"
+    },
+    {
+      "bytes": 13104,
+      "path": "sources/playwright/SOURCES.md",
+      "sha256": "1cf5bf200020aecfa537e8c6ef88db4ac794d2980ef124b31c5b0596bfeb239c"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 320996,
+      "path": "hosted/generated/playwright.seed.json",
+      "sha256": "b7eda47fe5c493932bc70bcb0701e6f2f88eada450aab57ad21d1b880d6d05e1"
+    },
+    {
+      "bytes": 10047,
+      "path": "hosted/generated/playwright.media.json",
+      "sha256": "c8f98f9264d70a1f0d6550960ede7cd3546ecaf667064108755d60be8ea54051"
+    }
+  ],
+  "schema_version": 1,
+  "source_tree_sha256": "581f525fd95e2dd7cf3ca19f865c9652cf91f547e83efc086deec653ac450172",
+  "topic_id": "topic:playwright"
+}

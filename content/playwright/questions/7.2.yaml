@@ -1,0 +1,65 @@
+objective: "7.2"
+questions:
+  - external_id: "7.2-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Por qué un workflow de GitHub Actions usa `npm ci` cuando el repositorio contiene un lockfile válido?
+    explanation: |
+      `npm ci` instala desde el lockfile y es apropiado para entornos automatizados reproducibles.
+    choices:
+      - text: Para instalar dependencias de acuerdo con el lockfile sin reescribirlo
+        correct: true
+        explanation: Correct — el job obtiene una instalación limpia y coherente con la versión registrada.
+      - text: Para crear automáticamente los tests que falten en el repositorio
+        correct: false
+        explanation: npm instala paquetes; no diseña ni genera la cobertura del curso.
+      - text: Para reemplazar la instalación de navegadores de Playwright
+        correct: false
+        explanation: Los paquetes npm y los binarios con sus dependencias son pasos distintos.
+      - text: Para publicar el reporte HTML como un artefacto
+        correct: false
+        explanation: La publicación requiere un paso de artifact separado.
+  - external_id: "7.2-002"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      El paso `npx playwright test` falla. ¿Qué condición permite que el paso posterior publique el reporte, salvo que el workflow haya sido cancelado?
+    explanation: |
+      La condición `!cancelled()` conserva evidencia después de un fallo, pero respeta una cancelación.
+    choices:
+      - text: "`if: ${{ success() }}`"
+        correct: false
+        explanation: Solo se ejecuta cuando los pasos previos tienen éxito, por lo que omite evidencia justo tras el fallo.
+      - text: "`if: ${{ !cancelled() }}`"
+        correct: true
+        explanation: Correct — el artefacto puede publicarse tras un fallo que necesite diagnóstico.
+      - text: "`if: ${{ github.actor }}`"
+        correct: false
+        explanation: El actor no expresa el estado de cancelación ni la necesidad de conservar evidencia.
+      - text: "`if: ${{ runner.os }}`"
+        correct: false
+        explanation: El sistema operativo del runner no representa el resultado de los pasos.
+  - external_id: "7.2-003"
+    type: multi
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué elementos forman parte de un workflow introductorio y diagnosticable de Playwright en GitHub Actions? Seleccioná todas las correctas.
+    explanation: |
+      El workflow debe preparar un entorno reproducible, ejecutar y preservar evidencia útil.
+    choices:
+      - text: Obtener el repositorio y preparar una versión explícita de Node
+        correct: true
+        explanation: Correct — el job necesita el código y un runtime conocido antes de instalar.
+      - text: Instalar dependencias, navegadores y bibliotecas necesarias
+        correct: true
+        explanation: Correct — ambas capas son necesarias cuando no se usa una imagen ya preparada.
+      - text: Escribir secrets directamente en el YAML para simplificar el soporte
+        correct: false
+        explanation: Las credenciales no deben quedar versionadas ni expuestas a código no confiable.
+      - text: Descartar el reporte cuando falla la suite
+        correct: false
+        explanation: El reporte y sus attachments son especialmente valiosos para diagnosticar fallos.

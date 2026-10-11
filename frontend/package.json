@@ -1,0 +1,32 @@
+{
+  "name": "learn-up-frontend",
+  "private": true,
+  "version": "1.8.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "mermaid": "^11",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-markdown": "^10",
+    "react-router-dom": "^7",
+    "remark-gfm": "^4"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5.2",
+    "jsdom": "^26",
+    "oxlint": "^1",
+    "typescript": "~5.6",
+    "vite": "^6",
+    "vitest": "^3"
+  }
+}

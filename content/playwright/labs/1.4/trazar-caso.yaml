@@ -1,0 +1,23 @@
+objective: "1.4"
+title: Construir la trazabilidad de un caso
+scenario: |
+  Una regla indica que una cuenta debe bloquearse en el quinto intento consecutivo de acceso
+  inválido. Vas a diseñar un caso antes de escribir Playwright.
+setup_sql: |
+  REQ-AUTH-05: bloquear la cuenta después de cinco intentos inválidos consecutivos.
+task: |
+  Escribí la condición de prueba, el resultado esperado para el quinto intento y un identificador
+  que permita relacionar requisito, caso y eventual defecto.
+expected_result: |
+  La condición cubre el límite de intentos; el quinto intento produce bloqueo; el caso conserva
+  una referencia estable a REQ-AUTH-05.
+self_check:
+  - prompt: Identificador de la base de prueba
+    kind: exact
+    value: REQ-AUTH-05
+  - prompt: Estado esperado luego del quinto intento
+    kind: contains
+    value: bloqueada
+  - prompt: Concepto que conecta requisito, caso, resultado y defecto
+    kind: contains
+    value: trazabilidad

@@ -1,0 +1,24 @@
+objective: "6.3"
+title: Redactar un defecto reproducible
+scenario: |
+  En build 2026.08.28 y Chromium, el checkout crea un pedido para SKU-42 con stock cero. El test
+  esperaba “Sin stock” y conservó una traza.
+setup_sql: |
+  Caso: checkout-stock-001
+  Evidencia: trace.zip
+task: |
+  Redactá conceptualmente título, precondición, resultado esperado y resultado real. Incluí la
+  referencia al caso y a la evidencia sin agregar credenciales.
+expected_result: |
+  El reporte identifica entorno, SKU con stock cero, pasos mínimos, diferencia esperado/real y la
+  traza asociada.
+self_check:
+  - prompt: Identificador del caso
+    kind: exact
+    value: checkout-stock-001
+  - prompt: Resultado esperado principal
+    kind: contains
+    value: Sin stock
+  - prompt: Archivo de evidencia
+    kind: exact
+    value: trace.zip

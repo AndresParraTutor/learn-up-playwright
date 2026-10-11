@@ -1,0 +1,65 @@
+objective: "6.1"
+questions:
+  - external_id: "6.1-001"
+    type: single
+    difficulty: 1
+    is_mock_eligible: true
+    stem: |
+      ¿Qué comando abre una ejecución en modo debug con Playwright Inspector?
+    explanation: |
+      La opción `--debug` habilita una ejecución interactiva orientada a inspección paso a paso.
+    choices:
+      - text: "`npx playwright test --debug`"
+        correct: true
+        explanation: Correct — inicia el runner con herramientas de depuración interactivas.
+      - text: "`npx playwright install`"
+        correct: false
+        explanation: Instalar navegadores no ejecuta ni depura casos.
+      - text: "`npx playwright test --headed`"
+        correct: false
+        explanation: El modo headed muestra el navegador, pero no activa por sí solo Inspector ni la pausa paso a paso.
+      - text: "`node trace.zip`"
+        correct: false
+        explanation: Una traza no se ejecuta directamente con Node de esa manera.
+  - external_id: "6.1-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué herramienta es especialmente adecuada para averiguar por qué un localizador coincide con cero o varios elementos durante desarrollo local?
+    explanation: |
+      Inspector permite explorar localizadores y sus coincidencias sobre la página pausada.
+    choices:
+      - text: El lockfile de npm abierto como reporte visual
+        correct: false
+        explanation: El lockfile describe dependencias, no el DOM ni coincidencias.
+      - text: Playwright Inspector
+        correct: true
+        explanation: Correct — muestra el estado y ayuda a refinar el localizador.
+      - text: Un retry ilimitado que repite el test hasta obtener una coincidencia
+        correct: false
+        explanation: Repetir no explica la ambigüedad ni corrige el selector.
+      - text: Eliminar strictness para que se accione un elemento arbitrario
+        correct: false
+        explanation: Oculta el problema y puede cambiar la entidad sobre la que actúa el caso.
+  - external_id: "6.1-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué pasos forman parte de un diagnóstico sistemático? Seleccioná todas las correctas.
+    explanation: |
+      Reducir el caso, clasificar hipótesis y cambiar una variable por vez permite confirmar la causa.
+    choices:
+      - text: Reproducir el fallo con el menor alcance posible
+        correct: true
+        explanation: Correct — reduce variables y acelera cada experimento.
+      - text: Separar hipótesis de producto, test y entorno
+        correct: true
+        explanation: Correct — evita asumir una causa antes de observar evidencia.
+      - text: Cambiar datos, localizadores y timeouts simultáneamente
+        correct: false
+        explanation: Si pasa después, no se puede saber qué cambio fue causal.
+      - text: Forzar la acción antes de leer el call log o el estado del elemento
+        correct: false
+        explanation: Forzar puede ocultar la condición que impedía la acción y elimina evidencia útil.

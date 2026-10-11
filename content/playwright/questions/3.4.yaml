@@ -1,0 +1,65 @@
+objective: "3.4"
+questions:
+  - external_id: "3.4-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué hace Playwright antes de un `click()` normal sobre un localizador?
+    explanation: |
+      Espera automáticamente verificaciones como unicidad, visibilidad, estabilidad, habilitación y recepción de eventos.
+    choices:
+      - text: Duerme siempre exactamente dos segundos sin observar el elemento
+        correct: false
+        explanation: El auto-waiting se basa en condiciones, no en una pausa fija universal.
+      - text: Comprueba condiciones de accionabilidad relevantes
+        correct: true
+        explanation: Correct — la acción comienza cuando el elemento puede recibirla de forma válida.
+      - text: Ejecuta todas las assertions futuras antes de hacer el click
+        correct: false
+        explanation: Las consecuencias se evalúan después mediante las expectations escritas.
+      - text: Deshabilita strictness y elige una coincidencia aleatoria si hay varias
+        correct: false
+        explanation: Las acciones estrictas fallan ante ambigüedad en lugar de elegir silenciosamente.
+  - external_id: "3.4-002"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Un mensaje aparece cuando termina una petición variable. ¿Qué enfoque es preferible?
+    explanation: |
+      Una assertion web-first espera la condición observable y termina tan pronto como se cumple.
+    choices:
+      - text: "`await page.waitForTimeout(5000)`"
+        correct: false
+        explanation: La pausa puede ser insuficiente o desperdiciar tiempo y no expresa la condición.
+      - text: Leer inmediatamente `textContent()` y asumir que el backend ya terminó
+        correct: false
+        explanation: Una lectura instantánea puede ocurrir antes de la actualización asíncrona.
+      - text: "`await expect(mensaje).toHaveText('Completado')`"
+        correct: true
+        explanation: Correct — reintenta sobre la señal concreta hasta cumplirla o vencer el timeout.
+      - text: Repetir el click varias veces para aumentar la probabilidad de ver el mensaje
+        correct: false
+        explanation: Duplicar acciones puede alterar el producto y no soluciona la sincronización.
+  - external_id: "3.4-003"
+    type: multi
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      ¿Qué son esperas explícitas basadas en señales válidas? Seleccioná todas las correctas.
+    explanation: |
+      Las esperas válidas representan eventos o estados observables requeridos por el flujo.
+    choices:
+      - text: Esperar una URL específica después de una acción
+        correct: true
+        explanation: Correct — la URL es una señal concreta de navegación.
+      - text: Esperar una respuesta de red identificada que el caso necesita
+        correct: true
+        explanation: Correct — una respuesta conocida puede ser una condición relevante del flujo.
+      - text: Dormir un tiempo elegido al azar porque “a veces funciona”
+        correct: false
+        explanation: Una duración arbitraria no representa el estado requerido.
+      - text: Aumentar todos los timeouts sin investigar qué condición falla
+        correct: false
+        explanation: Más tiempo puede ocultar lentitud o una expectativa incorrecta.

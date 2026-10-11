@@ -1,0 +1,23 @@
+objective: "7.2"
+title: Completar un workflow diagnosticable en GitHub Actions
+scenario: |
+  Un workflow ya obtiene el repositorio y prepara Node. Falta instalar el proyecto, ejecutar
+  Playwright y conservar el reporte aunque un test falle.
+setup_sql: |
+  Directorio de evidencia: playwright-report/
+task: |
+  Indicá el comando de instalación reproducible, el comando que instala navegadores con
+  dependencias, el comando de ejecución y la condición del paso que publica el artefacto.
+expected_result: |
+  El workflow usa `npm ci`, `npx playwright install --with-deps`, `npx playwright test` y publica
+  `playwright-report/` con `if: ${{ !cancelled() }}`.
+self_check:
+  - prompt: Instalación npm
+    kind: exact
+    value: npm ci
+  - prompt: Instalación de navegadores
+    kind: exact
+    value: npx playwright install --with-deps
+  - prompt: Condición para publicar el reporte
+    kind: exact
+    value: "if: ${{ !cancelled() }}"

@@ -1,0 +1,65 @@
+objective: "4.2"
+questions:
+  - external_id: "4.2-001"
+    type: single
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      Querés verificar que un campo contiene `ana@example.test`. ¿Qué matcher expresa mejor el contrato?
+    explanation: |
+      `toHaveValue` comprueba el valor actual de un control de entrada con reintento.
+    choices:
+      - text: "`await expect(campo).toHaveValue('ana@example.test')`"
+        correct: true
+        explanation: Correct — valida directamente el valor del campo.
+      - text: "`await expect(campo).toHaveCount(1)`"
+        correct: false
+        explanation: La cantidad de elementos no demuestra el valor del input.
+      - text: "`await expect(page).toHaveURL(/ana@example.test/)`"
+        correct: false
+        explanation: La URL es una señal diferente y puede no contener el valor del formulario.
+      - text: "`await expect(campo).toHaveClass('completo')`"
+        correct: false
+        explanation: Una clase interna no prueba qué dato tiene el control.
+  - external_id: "4.2-002"
+    type: multi
+    difficulty: 2
+    is_mock_eligible: true
+    stem: |
+      ¿Qué assertions describen estados de interacción? Seleccioná todas las correctas.
+    explanation: |
+      Los matchers de estado indican si una persona puede ver, editar, activar o seleccionar controles.
+    choices:
+      - text: "`await expect(control).toBeEnabled()`"
+        correct: true
+        explanation: Correct — comprueba que el control esté habilitado.
+      - text: "`await expect(control).toBeChecked()`"
+        correct: true
+        explanation: Correct — comprueba el estado seleccionado de checkbox o radio.
+      - text: "`expect(estado).toEqual('habilitado')`"
+        correct: false
+        explanation: Es una comparación genérica, no un estado de interacción del elemento.
+      - text: "`expect(Array.isArray(datos)).toBe(true)`"
+        correct: false
+        explanation: Trabaja con datos en memoria y no con accionabilidad del control.
+  - external_id: "4.2-003"
+    type: single
+    difficulty: 3
+    is_mock_eligible: true
+    stem: |
+      El comportamiento relevante es que un botón de alternancia quedó activo. ¿Qué evidencia es más semántica?
+    explanation: |
+      Un atributo accesible que representa el estado es un contrato más cercano al comportamiento que una clase visual interna.
+    choices:
+      - text: El orden exacto de todas las clases CSS generado por el framework
+        correct: false
+        explanation: El orden de clases puede cambiar sin modificar la función del control.
+      - text: "`await expect(boton).toHaveAttribute('aria-pressed', 'true')`"
+        correct: true
+        explanation: Correct — expresa el estado de alternancia en la interfaz accesible.
+      - text: La posición absoluta del botón medida en píxeles desde la esquina
+        correct: false
+        explanation: La geometría no demuestra el estado activo y es sensible al layout.
+      - text: El nombre del archivo fuente donde se implementó el componente
+        correct: false
+        explanation: La ubicación del código no es una señal observable para la persona usuaria.

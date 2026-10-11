@@ -1,0 +1,23 @@
+objective: "4.2"
+title: Elegir evidencia semántica
+scenario: |
+  Un botón de alternancia cambia de clase y también actualiza `aria-pressed`. Un rediseño puede
+  cambiar las clases sin modificar el comportamiento.
+setup_sql: |
+  const toggle = page.getByRole('button', { name: 'Notificaciones' });
+task: |
+  Elegí el atributo que verificarías para demostrar el estado activo y escribí su valor esperado.
+  Explicá por qué la clase CSS no es el contrato principal.
+expected_result: |
+  Se verifica `aria-pressed` con valor `true`; representa el estado accesible y resiste cambios
+  puramente visuales.
+self_check:
+  - prompt: Atributo semántico
+    kind: exact
+    value: aria-pressed
+  - prompt: Valor esperado
+    kind: exact
+    value: "true"
+  - prompt: Matcher de atributo
+    kind: contains
+    value: toHaveAttribute
