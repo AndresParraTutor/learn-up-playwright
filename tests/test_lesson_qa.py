@@ -100,7 +100,7 @@ def test_codex_cli_uses_ephemeral_read_only_execution(monkeypatch) -> None:
     assert chunks == []
     assert answer == "Title: Resultado\n\nRespuesta simulada."
     assert captured["command"] == [
-        "codex",
+        "/fake/codex",
         "exec",
         "--json",
         "--ephemeral",

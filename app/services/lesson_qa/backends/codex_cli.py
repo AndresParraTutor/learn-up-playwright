@@ -15,14 +15,14 @@ def check_available() -> None:
     if shutil.which("codex") is None:
         raise LessonQAError(
             "No se encontró Codex CLI. Instalalo/autenticalo o configurá "
-            "LEARNUP_LLM_BACKEND=claude_cli u openhands."
+            "LEARNUP_LLM_BACKEND=agy_cli, claude_cli u openhands."
         )
 
 
 def stream(prompt: str):
     check_available()
     command = [
-        "codex",
+        shutil.which("codex"),
         "exec",
         "--json",
         "--ephemeral",

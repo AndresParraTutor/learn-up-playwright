@@ -2,7 +2,7 @@
 
 Aplicación de estudio con lecciones, videos, prácticas por módulo y repaso. Cada estudiante conserva su progreso en su propia computadora.
 
-Versión de la aplicación: **1.15**.
+Versión de la aplicación: **1.16**.
 
 Los materiales del curso se guardan en `content/` y los videos en `media/`. Consultá `README.md` para instalar y abrir la aplicación.
 

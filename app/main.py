@@ -21,7 +21,7 @@ Base.metadata.create_all(engine)
 
 app = FastAPI(
     title="learn-up",
-    version="1.15",
+    version="1.16",
     description="Aplicación local de estudio",
 )
 app.state.api_token = settings.api_token or secrets.token_urlsafe(32)

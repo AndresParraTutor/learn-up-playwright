@@ -16,7 +16,7 @@ def check_available() -> None:
     if shutil.which("claude") is None:
         raise LessonQAError(
             "No se encontró Claude CLI. Instalalo/autenticalo o configurá "
-            "LEARNUP_LLM_BACKEND=codex_cli u openhands."
+            "LEARNUP_LLM_BACKEND=agy_cli, codex_cli u openhands."
         )
 
 

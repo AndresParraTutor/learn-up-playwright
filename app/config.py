@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class LLMBackend(StrEnum):
+    AGY_CLI = "agy_cli"
     CLAUDE_CLI = "claude_cli"
     CODEX_CLI = "codex_cli"
     OPENHANDS = "openhands"
@@ -20,7 +21,8 @@ class Settings(BaseSettings):
     frontend_port: int = 5173
     backend_port: int = 8011
     api_token: str | None = None
-    llm_backend: LLMBackend = LLMBackend.CODEX_CLI
+    llm_backend: LLMBackend = LLMBackend.AGY_CLI
+    agy_cli_model: str | None = None
     claude_cli_model: str = "sonnet"
     llm_model: str = "anthropic/claude-sonnet-4-5"
     llm_api_key: str | None = None

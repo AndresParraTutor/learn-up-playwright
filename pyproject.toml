@@ -1,6 +1,6 @@
 [project]
 name = "learn-up"
-version = "1.15"
+version = "1.16"
 description = "Aplicación local de estudio para cursos guiados por syllabus"
 requires-python = ">=3.12"
 dependencies = [

@@ -1800,7 +1800,7 @@ wheels = [
 
 [[package]]
 name = "learn-up"
-version = "1.15"
+version = "1.16"
 source = { virtual = "." }
 dependencies = [
     { name = "duckdb" },

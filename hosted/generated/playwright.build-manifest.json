@@ -4,7 +4,7 @@
     {
       "bytes": 527,
       "path": "ABOUT.md",
-      "sha256": "ce8853ccf8efcb4c173924976f73a2e29437aedc54a5d32f07f05168e2a58a23"
+      "sha256": "5c07d8534c4fa8ed420fb548ccb2bde21add0e5d6cf21b2d737693b68799c784"
     },
     {
       "bytes": 3542,
@@ -404,7 +404,7 @@
     {
       "bytes": 614,
       "path": "pyproject.toml",
-      "sha256": "8b6dd34c3bd38f3c20a879ddaf74486cbe96283b0207a88c5df076e426d23fc4"
+      "sha256": "416c6bc9ef4f1ee2c78fb133c6bfc82836f3da4ffef719e542b4b666ec1bef43"
     },
     {
       "bytes": 2397,
@@ -421,7 +421,7 @@
     {
       "bytes": 320996,
       "path": "hosted/generated/playwright.seed.json",
-      "sha256": "b7eda47fe5c493932bc70bcb0701e6f2f88eada450aab57ad21d1b880d6d05e1"
+      "sha256": "3069ad986e4887fe47ad0663e27a18e530d294217488d078e7a4695cbc9908f9"
     },
     {
       "bytes": 10047,
@@ -430,6 +430,6 @@
     }
   ],
   "schema_version": 1,
-  "source_tree_sha256": "581f525fd95e2dd7cf3ca19f865c9652cf91f547e83efc086deec653ac450172",
+  "source_tree_sha256": "37ae54a4c170f536265ac15f766034ebb8e5828e5c9c07f6bfd3fcc40f3d57c7",
   "topic_id": "topic:playwright"
 }
