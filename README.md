@@ -67,7 +67,7 @@ Comprobá que Node.js sea 24.x o una versión LTS compatible (22.12 o superior).
 La entrega tiene dos partes:
 
 1. **Aplicación y material de estudio:** cloná el [repositorio de GitHub de learn-up Playwright](https://github.com/AndresParraTutor/learn-up-playwright) o descargalo con **Code → Download ZIP** y extraelo.
-2. **Paquete con los videos:** descargá `playwright-20260906.learnup.zip` desde la plataforma de la universidad. **No descomprimas este archivo:** se importa desde learn-up y contiene los 25 videos junto con el material del curso. Guardalo para el paso de [incorporar los videos y el material](#incorporar-los-videos-y-el-material-de-la-plataforma).
+2. **Paquete con los videos:** descargá [playwright-20260906.learnup.zip](https://drive.google.com/file/d/1wH9mab2V5FNLRiHlzwIosWmfZFqupfuP/view). **No descomprimas este archivo:** se importa desde learn-up y contiene los 25 videos junto con el material del curso. Guardalo para el paso de [incorporar los videos y el material](#incorporar-los-videos-y-el-material-de-la-plataforma).
 
 El repositorio no incluye los videos.
 
@@ -145,7 +145,7 @@ Si falta un video, verificá que la importación haya terminado correctamente y 
 
 ## Incorporar los videos y el material de la plataforma
 
-Importá `playwright-20260906.learnup.zip` una vez instalada la aplicación. Repetí el procedimiento cuando el tutor publique un paquete actualizado.
+Importá `playwright-20260906.learnup.zip` una vez instalada la aplicación. Repetí el procedimiento si el tutor publica un paquete actualizado.
 
 Desde la app:
 
