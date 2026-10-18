@@ -1,5 +1,7 @@
 # learn-up: Playwright
 
+¿Querés instalar y probar la app sin conocimientos técnicos? Seguí la [guía sencilla para Windows](GUIA_INSTALACION_SENCILLA.md), con instrucciones paso a paso y una prueba del recorrido del estudiante.
+
 Aplicación de estudio para el curso «Automatización de Testing con Playwright». Incluye 25 lecciones con videos, prácticas guiadas, y preguntas de repaso por módulo.
 
 Esta guía corresponde a la aplicación local. Cada estudiante usa su propia copia y guarda su progreso en su computadora.
